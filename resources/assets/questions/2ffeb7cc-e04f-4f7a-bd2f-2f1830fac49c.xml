@@ -1,0 +1,296 @@
+<!-- v.4.66 -->
+<quiz guid="2ffeb7cc-e04f-4f7a-bd2f-2f1830fac49c" totalTime="0" finished="0" name="Test Ödevi" lecture_guid="e4f9a4bf-1b1d-4707-968a-1ce437a63b63" lecture_chapter_guid="be29e452-0c6f-42b2-a74b-19b89e9ad73f"  lecture_sub_chapter_guid=""  lecture_name="Matematik" isAnswerInvisibleBeforeDeadline="true" minuteBasedDeadline="false" deadline="2016-09-21 00:00" sendTime="2016-09-14 00:38" class_level="genel" minuteValue="0">
+	<question>
+		<guid>2a229b1e-9f69-4feb-89b3-dab20be46e44</guid>
+		<description>null</description>
+		<index>1</index>
+		<text>null</text>
+		<type>0</type>
+		<state>0</state>
+		<number>1</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="70cda3fd-6faf-4e6b-92f3-46e4a80bca96" bounds="{113,129,343,267}"  fileURL="70cda3fd-6faf-4e6b-92f3-46e4a80bca96.png"/>		</images>
+	</question>
+	<question>
+		<guid>53fbee00-bc70-4b1b-8dca-ba5ae4ff3932</guid>
+		<description>null</description>
+		<index>2</index>
+		<text>null</text>
+		<type>0</type>
+		<state>0</state>
+		<number>2</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="8aec422c-d432-4744-8795-15014741cb28" bounds="{94,139,381,248}"  fileURL="8aec422c-d432-4744-8795-15014741cb28.png"/>		</images>
+	</question>
+	<question>
+		<guid>d4eb2bbf-cfeb-45aa-9134-8b6b86d75a3d</guid>
+		<description>null</description>
+		<index>3</index>
+		<text>null</text>
+		<type>5</type>
+		<state>0</state>
+		<number>3</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="01cafe27-d8f5-4dc4-a42c-d099442fccab" bounds="{111,128,347,269}"  fileURL="01cafe27-d8f5-4dc4-a42c-d099442fccab.png"/>		</images>
+	</question>
+	<question>
+		<guid>98ee60eb-5e20-47ce-ad23-207bc9182594</guid>
+		<description>null</description>
+		<index>4</index>
+		<text>null</text>
+		<type>5</type>
+		<state>0</state>
+		<number>4</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="d460ba17-a9ca-408b-847f-9027a4262197" bounds="{93,158,382,210}"  fileURL="d460ba17-a9ca-408b-847f-9027a4262197.png"/>		</images>
+	</question>
+	<question>
+		<guid>db88bd9c-63bc-427d-a1ca-f3e060ba6b66</guid>
+		<description>null</description>
+		<index>5</index>
+		<text>null</text>
+		<type>5</type>
+		<state>0</state>
+		<number>5</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="ea72879c-a54d-4c25-a637-c0d22d347122" bounds="{59,70,450,385}"  fileURL="ea72879c-a54d-4c25-a637-c0d22d347122.png"/>		</images>
+	</question>
+	<question>
+		<guid>0712b707-a719-4e79-be6f-86bd7e8cb3fd</guid>
+		<description>null</description>
+		<index>6</index>
+		<text>null</text>
+		<type>4</type>
+		<state>0</state>
+		<number>6</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="96045b91-3295-49b6-bd82-8c9361f7134b" bounds="{27,50,515,425}"  fileURL="96045b91-3295-49b6-bd82-8c9361f7134b.png"/>		</images>
+		<dropTargets>
+			<target guid="63518ce4-5299-4dc8-84a7-c88d3d28eb3e" bounds="{163,194,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="4ecfd5b3-1c56-498a-be1c-1068481e5475" bounds="{163,260,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="91ba0d47-8eeb-48c4-a378-167bfa4ff6f4" bounds="{254,260,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="f24de9e1-ef08-4f99-962a-86701978c98b" bounds="{254,194,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="563b28e1-b758-44d8-8449-57bbc2b635c5" bounds="{163,324,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="2e3539b6-5131-4e08-aac3-c4567fe1b108" bounds="{163,390,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="7c09ac55-7255-49c1-bc63-9d89082567de" bounds="{254,324,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="55535886-bc39-46ce-b5c8-8682c328ef8b" bounds="{254,390,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="4e746530-0d6a-4961-b2cd-fb0e767c927e" bounds="{354,194,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="7c273a0c-be31-44d6-bbaa-3602b09e693c" bounds="{354,260,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="b3fc0665-d939-42dd-b7af-26bbcfdd50f1" bounds="{354,324,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="d244dda7-9ebc-44d4-a78f-1d7ad82f3c0b" bounds="{354,390,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="0fcb13ba-6be8-45d5-ab8c-2f4a066ad46d" bounds="{458,194,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="f6accc1b-ba1d-4e99-8d0a-6aab1c866465" bounds="{458,260,32,32}" anchor="null" checked="true" correct_option_id="null">
+			</target>
+			<target guid="e19ec384-31cc-41f1-982b-3cdddd5dfc23" bounds="{458,324,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="d036b48a-d83f-4368-a2eb-842295009e4e" bounds="{458,390,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+		</dropTargets>
+	</question>
+	<question>
+		<guid>b0ccbbc4-d14d-4f61-ae8d-c79e5c704c38</guid>
+		<description>null</description>
+		<index>7</index>
+		<text>null</text>
+		<type>3</type>
+		<state>0</state>
+		<number>7</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="8ae43381-bc76-4187-a6ed-da2f18cca32c" bounds="{0,82,569,362}"  fileURL="8ae43381-bc76-4187-a6ed-da2f18cca32c.png"/>		</images>
+		<dropTargets>
+			<target guid="a973cf97-2a9f-4eaa-8afb-8bc914475552" bounds="{139,178,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="3872af02-77c9-4319-a1d0-642d9054c6e2" bounds="{377,224,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="69e16cd1-a69c-46fc-b21c-c2ce36cdf5ae" bounds="{139,258,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="06501645-616b-44e3-ad93-626ace25d0c8" bounds="{139,337,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="02a2c339-fcbe-4d52-ae07-7a050a8035f4" bounds="{139,403,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+			<target guid="e9ad905c-b7a3-49da-a8f7-d7ae0d31a9ad" bounds="{377,301,32,32}" anchor="null" checked="false" correct_option_id="null">
+			</target>
+		</dropTargets>
+		<matchings>
+                   <matching sourceOption="a973cf97-2a9f-4eaa-8afb-8bc914475552" destinationOption="3872af02-77c9-4319-a1d0-642d9054c6e2"/>
+                   <matching sourceOption="a973cf97-2a9f-4eaa-8afb-8bc914475552" destinationOption="3872af02-77c9-4319-a1d0-642d9054c6e2"/>
+                   <matching sourceOption="a973cf97-2a9f-4eaa-8afb-8bc914475552" destinationOption="3872af02-77c9-4319-a1d0-642d9054c6e2"/>
+                   <matching sourceOption="3872af02-77c9-4319-a1d0-642d9054c6e2" destinationOption="a973cf97-2a9f-4eaa-8afb-8bc914475552"/>
+                   <matching sourceOption="3872af02-77c9-4319-a1d0-642d9054c6e2" destinationOption="a973cf97-2a9f-4eaa-8afb-8bc914475552"/>
+                   <matching sourceOption="3872af02-77c9-4319-a1d0-642d9054c6e2" destinationOption="a973cf97-2a9f-4eaa-8afb-8bc914475552"/>
+                   <matching sourceOption="69e16cd1-a69c-46fc-b21c-c2ce36cdf5ae" destinationOption="3872af02-77c9-4319-a1d0-642d9054c6e2"/>
+                   <matching sourceOption="69e16cd1-a69c-46fc-b21c-c2ce36cdf5ae" destinationOption="e9ad905c-b7a3-49da-a8f7-d7ae0d31a9ad"/>
+                   <matching sourceOption="06501645-616b-44e3-ad93-626ace25d0c8" destinationOption="3872af02-77c9-4319-a1d0-642d9054c6e2"/>
+                   <matching sourceOption="06501645-616b-44e3-ad93-626ace25d0c8" destinationOption="e9ad905c-b7a3-49da-a8f7-d7ae0d31a9ad"/>
+                   <matching sourceOption="02a2c339-fcbe-4d52-ae07-7a050a8035f4" destinationOption="3872af02-77c9-4319-a1d0-642d9054c6e2"/>
+		</matchings>
+	</question>
+	<question>
+		<guid>266f23ac-ed2d-4a28-b44d-255f6e9a4ee2</guid>
+		<description>null</description>
+		<index>8</index>
+		<text>null</text>
+		<type>2</type>
+		<state>0</state>
+		<number>8</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="e3651289-6e22-4456-ac77-85fbb0abfea7" bounds="{58,69,453,387}"  fileURL="e3651289-6e22-4456-ac77-85fbb0abfea7.png"/>		</images>
+		<informations>
+					<information guid="ea1bb0e3-c2e7-4ccb-af69-8e94706a28c7" type="file" bounds="{36,372,32,32}" visibleBefore="false" fileURL="mitochondria_at_work.jpg" localFileURL="mitochondria_at_work.jpg" visibleAfter="true">
+						<![CDATA[]]>
+					</information>
+		</informations>
+		<options>
+			<option guid="f5017bba-a966-4208-b11f-872a20a8f701" text="Nucleus">
+			</option>
+			<option guid="41f8e326-6659-48f0-ae88-ede359561d83" text="Cytoplasm">
+			</option>
+			<option guid="0b86beb6-ea12-4317-857b-b907cc621808" text="Mitochondria">
+			</option>
+			<option guid="e5aab043-6ea1-4640-a0f6-fa314994fc6c" text="Golgi">
+			</option>
+		</options>
+		<dropTargets>
+			<target guid="6ba1d821-ab67-4c6e-a4fd-7981426fb999" bounds="{17,444,200,45}" anchor="{269,233}" checked="false" correct_option_id="f5017bba-a966-4208-b11f-872a20a8f701">
+			</target>
+			<target guid="31e40128-c937-400e-8b56-7e1cc2fe922a" bounds="{358,28,200,45}" anchor="{349,166}" checked="false" correct_option_id="41f8e326-6659-48f0-ae88-ede359561d83">
+			</target>
+			<target guid="1616abce-dd03-4cfa-9148-4688fcaeb7c3" bounds="{358,444,200,45}" anchor="{341,287}" checked="false" correct_option_id="0b86beb6-ea12-4317-857b-b907cc621808">
+			</target>
+		</dropTargets>
+	</question>
+	<question>
+		<guid>adc36cf7-3dc1-47cb-82bc-bc0476782a20</guid>
+		<description>null</description>
+		<index>9</index>
+		<text>null</text>
+		<type>1</type>
+		<state>0</state>
+		<number>9</number>
+		<imageURL>null</imageURL>
+		<correctAnswer>0</correctAnswer>
+		<answer>-1</answer>
+		<optionCount>4</optionCount>
+		<elapsedTime>0</elapsedTime>
+		<rating>0</rating>
+		<difficulty>0</difficulty>
+		<pool_question>false</pool_question>
+		<weight>11.11</weight>
+		<ratable>false</ratable>
+		<images>
+           <image guid="94751907-dd60-47b0-9642-0498db85ccf1" bounds="{18,78,532,369}"  fileURL="94751907-dd60-47b0-9642-0498db85ccf1.png"/>		</images>
+		<options>
+			<option guid="e570b137-99f4-41e2-9acb-39cb785e5813" text="hücre">
+			</option>
+			<option guid="a9281be8-4e42-4368-a415-c8ce42e3e111" text="hücre zarı">
+			</option>
+			<option guid="042d4fd4-3ce8-48f0-a168-d4966c1e9de0" text="Sitoplazma">
+			</option>
+			<option guid="f6302017-af43-4237-9d98-fb6d662eee28" text="Mitokondri">
+			</option>
+		</options>
+		<dropTargets>
+			<target guid="21b063ff-fd12-49bf-8484-1544770138b3" bounds="{393,175,85,43}" anchor="null" checked="false" correct_option_id="e570b137-99f4-41e2-9acb-39cb785e5813">
+			</target>
+			<target guid="8966c3d7-56bb-4702-b436-cc9b1adb17ed" bounds="{392,232,165,43}" anchor="null" checked="false" correct_option_id="a9281be8-4e42-4368-a415-c8ce42e3e111">
+			</target>
+			<target guid="467deb12-9207-46d1-b8cc-ba96dc4c14b8" bounds="{250,310,127,41}" anchor="null" checked="false" correct_option_id="042d4fd4-3ce8-48f0-a168-d4966c1e9de0">
+			</target>
+			<target guid="48ffb852-a450-4fc6-a854-bf450f6fb67a" bounds="{15,400,137,46}" anchor="null" checked="false" correct_option_id="f6302017-af43-4237-9d98-fb6d662eee28">
+			</target>
+		</dropTargets>
+	</question>
+</quiz>

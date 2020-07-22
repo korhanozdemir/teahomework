@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="4da385bc-8c5e-4cfc-b992-eece366d0e6e" name="Default Changelist" comment="dddd" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" doNotAsk="true">
+    <execution />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/seld/jsonlint" />
+      <path value="$PROJECT_DIR$/vendor/justinrainbow/json-schema" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1e7qYQIcY9IwD4zE9XpNHnIcZHT" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.permissions" value="false" />
+    <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/lang" />
+      <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
+      <recent name="$PROJECT_DIR$/resources/js/services" />
+      <recent name="$PROJECT_DIR$/resources/js/components/Pages" />
+      <recent name="$PROJECT_DIR$/resources/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/storage/images/questions" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4da385bc-8c5e-4cfc-b992-eece366d0e6e" name="Default Changelist" comment="" />
+      <created>1593683025700</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593683025700</updated>
+      <workItem from="1593683027381" duration="658000" />
+      <workItem from="1593683741478" duration="67000" />
+      <workItem from="1593683825123" duration="884000" />
+      <workItem from="1593690406860" duration="8920000" />
+      <workItem from="1593705054994" duration="6591000" />
+      <workItem from="1593759238390" duration="22111000" />
+      <workItem from="1593856644766" duration="462000" />
+      <workItem from="1593871923697" duration="284000" />
+      <workItem from="1594012395478" duration="21485000" />
+      <workItem from="1594193226164" duration="4263000" />
+      <workItem from="1594197827446" duration="18188000" />
+      <workItem from="1594281182506" duration="85000" />
+      <workItem from="1594281306489" duration="76000" />
+      <workItem from="1594281455317" duration="197000" />
+      <workItem from="1594281853452" duration="17000" />
+      <workItem from="1594281888601" duration="516000" />
+      <workItem from="1594282470920" duration="5229000" />
+      <workItem from="1594296810403" duration="996000" />
+      <workItem from="1594305112728" duration="1675000" />
+      <workItem from="1594365121488" duration="17394000" />
+      <workItem from="1594447147314" duration="6524000" />
+      <workItem from="1594455433573" duration="6543000" />
+      <workItem from="1594624333663" duration="401000" />
+      <workItem from="1594624825614" duration="5775000" />
+      <workItem from="1594633936998" duration="1318000" />
+      <workItem from="1594643832118" duration="667000" />
+      <workItem from="1594649084982" duration="2427000" />
+      <workItem from="1594712966829" duration="140000" />
+      <workItem from="1594716724168" duration="1648000" />
+      <workItem from="1594721419382" duration="7194000" />
+      <workItem from="1594889269926" duration="839000" />
+      <workItem from="1594892077559" duration="5038000" />
+      <workItem from="1594907132946" duration="1211000" />
+      <workItem from="1594970894420" duration="8187000" />
+      <workItem from="1594985142623" duration="112000" />
+      <workItem from="1594985604571" duration="9000" />
+      <workItem from="1594988821624" duration="8576000" />
+      <workItem from="1595232006323" duration="14040000" />
+      <workItem from="1595252168915" duration="5030000" />
+      <workItem from="1595316008202" duration="22413000" />
+      <workItem from="1595403430567" duration="3614000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="96" key="#Deployment" timestamp="1594476116678">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state x="320" y="96" key="#Deployment/0.23.1440.817@0.23.1440.817" timestamp="1594476116678" />
+    <state x="320" y="96" key="#Deployment/0.23.1440.821@0.23.1440.821" timestamp="1594475799985" />
+    <state x="345" y="110" key="#Options" timestamp="1594471753038">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state x="345" y="110" key="#Options/0.23.1440.817@0.23.1440.817" timestamp="1594471753038" />
+    <state x="304" y="83" key="#SSH_Configurations" timestamp="1594476073629">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state x="304" y="83" key="#SSH_Configurations/0.23.1440.817@0.23.1440.817" timestamp="1594476073629" />
+    <state x="1981" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594281332214">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="1981" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594281332214" />
+    <state x="141" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594477935628">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state x="141" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.817@0.23.1440.817" timestamp="1594477935628" />
+    <state x="850" y="280" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594455385696">
+      <screen x="0" y="23" width="1440" height="815" />
+    </state>
+    <state x="850" y="280" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.815@0.23.1440.815" timestamp="1594455385696" />
+    <state x="2031" y="444" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594304953759" />
+    <state x="2031" y="452" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594972495173">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="2031" y="452" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594972495173" />
+    <state x="652" y="39" key="CommitChangelistDialog2" timestamp="1593762756974">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="273" y="33" key="CommitChangelistDialog2/0.23.1440.815@0.23.1440.815" timestamp="1593708306960" />
+    <state x="652" y="39" key="CommitChangelistDialog2/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1593762756974" />
+    <state x="1454" y="514" key="NewPhpClassDialog" timestamp="1594196031464">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="1454" y="514" key="NewPhpClassDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594196031464" />
+    <state x="1802" y="329" key="SettingsEditor" timestamp="1594295474028">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="1802" y="329" key="SettingsEditor/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594295474028" />
+    <state x="2098" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593762758700">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="2098" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1593762758700" />
+    <state x="893" y="261" width="562" height="534" key="find.popup" timestamp="1594998445515">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="893" y="261" width="562" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594998445515" />
+    <state x="2000" y="445" width="586" height="490" key="find.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594627819666" />
+    <state x="627" y="168" key="ftp.server.browser" timestamp="1594476097369">
+      <screen x="0" y="23" width="1440" height="817" />
+    </state>
+    <state x="627" y="168" key="ftp.server.browser/0.23.1440.817@0.23.1440.817" timestamp="1594476097369" />
+    <state x="1958" y="325" key="run.anything.popup" timestamp="1594979706181">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="1958" y="325" key="run.anything.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594979706181" />
+    <state x="1958" y="328" width="670" height="676" key="search.everywhere.popup" timestamp="1594388229604">
+      <screen x="0" y="23" width="3440" height="1334" />
+    </state>
+    <state x="820" y="209" width="670" height="413" key="search.everywhere.popup/0.23.1440.815@0.23.1440.815" timestamp="1593708518093" />
+    <state x="1958" y="328" width="670" height="676" key="search.everywhere.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594388229604" />
+  </component>
+</project>

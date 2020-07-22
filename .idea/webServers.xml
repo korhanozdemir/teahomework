@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1ce4e731-9d9c-420d-b32c-e81307f4dbfa" name="teahomework.hdavip.net" url="http://terrahomework.hdavip.net">
+        <fileTransfer rootFolder="/home/admin/web/teahomework.hdavip.net/public_html" accessType="SFTP" host="teahomework.hdavip.net" port="22" sshConfigId="1538b831-0045-4537-90dd-8a49cd2c6406" sshConfig="root@teahomework.hdavip.net:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

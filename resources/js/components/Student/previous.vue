@@ -1,25 +1,28 @@
 <template>
     <div class="main">
-        <button v-if="this.questionIndex > 0" class="button is-primary" @click="$emit('prev-question')">PREV</button>
+        <button
+            :disabled="!this.$store.state.homework.isShown"
+            v-if="this.$store.state.homework.questionIndex > 0"
+            class="button is-primary"
+            @click="$emit('prev-question')"
+        >
+            ÖNCEKİ
+        </button>
     </div>
 </template>
 
 <script>
-    export default {
-        name: "previous",
-        props: ["jsonQuestions","questionIndex"]
-
-    }
+export default {
+    name: "previous",
+    props: ["jsonQuestions"],
+};
 </script>
 
 <style scoped>
-    .main{
-        background-color: white;
-        border-right: 1px solid gray ;
-    }
-    button{
-        margin: 250px auto;
-        display: block;
-
-    }
+.main {
+}
+button {
+    margin: 250px auto;
+    display: block;
+}
 </style>

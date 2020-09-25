@@ -41,19 +41,7 @@
             ];
 
 
-           StudentService.GetAllQuestionResult(2,4)
-                .then((res)=>{
-                    console.log(res);
-                });
-            StudentService.GetHomework(2)
-                .then((res)=>{
-                    console.log(res);
 
-                });
-            StudentService.UpdateAllQuestionResult(2, questionResult)
-                .then((res)=>{
-                    console.log(res);
-                })
 
         }
     }

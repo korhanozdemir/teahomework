@@ -29,6 +29,7 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
 export default {
     props: ["jsonQuestions", "isLoaded"],
     name: "next",
@@ -43,6 +44,11 @@ export default {
         jsonQuestions: function () {
             this.question = this.jsonQuestions.data.questions;
         },
+    },
+    computed: {
+        ...mapGetters({
+            isScreenshot: "homework/isScreenshot",
+        }),
     },
 };
 </script>

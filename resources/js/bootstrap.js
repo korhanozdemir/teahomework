@@ -1,20 +1,20 @@
-window._ = require('lodash');
-window.toastr = require('toastr');
+window._ = require("lodash");
+window.toastr = require("toastr");
 toastr.options = {
-    "closeButton": false,
-    "debug": false,
-    "newestOnTop": false,
-    "progressBar": false,
-    "positionClass": "toast-top-right",
-    "preventDuplicates": false,
-    "showDuration": "0",
-    "hideDuration": "0",
-    "timeOut": "100000",
-    "extendedTimeOut": "0",
-    "showEasing": "swing",
-    "hideEasing": "linear",
-    "showMethod": "fadeIn",
-    "hideMethod": "fadeOut"
+    closeButton: false,
+    debug: false,
+    newestOnTop: false,
+    progressBar: false,
+    positionClass: "toast-top-right",
+    preventDuplicates: false,
+    showDuration: "0",
+    hideDuration: "0",
+    timeOut: "100000",
+    extendedTimeOut: "0",
+    showEasing: "swing",
+    hideEasing: "linear",
+    showMethod: "fadeIn",
+    hideMethod: "fadeOut",
 };
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -23,10 +23,10 @@ toastr.options = {
  */
 
 try {
-    window.Popper = require('popper.js').default;
-    window.$ = window.jQuery = require('jquery');
+    window.Popper = require("popper.js").default;
+    window.$ = window.jQuery = require("jquery");
 
-    require('bootstrap');
+    require("bootstrap");
 } catch (e) {}
 
 /**
@@ -35,10 +35,9 @@ try {
  * CSRF token as a header based on the value of the "XSRF" token cookie.
  */
 
-window.axios = require('axios');
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-window.axios.defaults.baseURL = 'http://teahomework.com/api/';
-
+window.axios = require("axios");
+window.axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+window.axios.defaults.baseURL = "http://teahomework.hdavip.net/api/";
 
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

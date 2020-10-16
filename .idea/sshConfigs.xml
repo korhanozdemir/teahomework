@@ -2,7 +2,8 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig authType="PASSWORD" host="teahomework.hdavip.net" id="1538b831-0045-4537-90dd-8a49cd2c6406" port="22" nameFormat="DESCRIPTIVE" username="root" />
+      <sshConfig authType="PASSWORD" host="192.168.212.14" id="1538b831-0045-4537-90dd-8a49cd2c6406" port="22" nameFormat="DESCRIPTIVE" username="root" />
+      <sshConfig authType="PASSWORD" host="teahomework.hdavip.net" id="32969833-c8e3-4897-8f76-9548ff0a4455" port="22" nameFormat="DESCRIPTIVE" username="root" />
     </configs>
   </component>
 </project>

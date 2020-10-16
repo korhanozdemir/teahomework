@@ -12,9 +12,16 @@
 </template>
 
 <script>
+import { mapGetters } from "vuex";
+
 export default {
     name: "previous",
     props: ["jsonQuestions"],
+    computed: {
+        ...mapGetters({
+            isScreenshot: "homework/isScreenshot",
+        }),
+    },
 };
 </script>
 

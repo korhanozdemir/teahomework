@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.student')
 @section('content')
-    <home/>
+    <student/>
 @endsection

@@ -139,6 +139,7 @@
             v-on:submit="submit"
             v-on:next-question="nextQuestion"
             v-on:change-question="changeQuestion"
+            v-on:screenshot="screenshot"
             :isLoaded="isLoaded"
             :isShown="isShown"
             :jsonQuestions.sync="jsonQuestions"
@@ -226,6 +227,7 @@ export default {
                         .querySelector(".question-area-canvas")
                         .classList.add("resetted");
                 }
+                this.screenshot();
             }
         },
         prevQuestion() {
@@ -254,9 +256,10 @@ export default {
                         .querySelector(".question-area-canvas")
                         .classList.add("resetted");
                 }
+                this.screenshot();
             }
         },
-        async changeQuestion(state) {
+        changeQuestion(state) {
             //console.log(await this.screenshot());
 
             if (state === "prev") {
@@ -365,98 +368,100 @@ export default {
                                 this.target.id.replace("option", "")
                             );
                             return;
-                        }
-                        //element hit-test passed so i want to postion it in the droparea and scale dragarea to cover droparea
-                        const dropBound = document
-                            .querySelectorAll(".droparea")
-                            [foundIndex].getBoundingClientRect();
-                        const dragBound = this.target.getBoundingClientRect();
-                        if (
-                            document.querySelectorAll(".empty_rect.droparea")
-                                .length > 0
-                        ) {
-                            TweenLite.to(this.target, 0.5, {
-                                opacity: 0,
-                            });
-                            TweenLite.set(this.target, {
-                                x: 0,
-                                y: 0,
-                            });
-                            TweenLite.to(this.target, 0.5, {
-                                opacity: 1,
-                            });
-                            document.querySelectorAll(".droparea")[
-                                foundIndex
-                            ].firstChild.firstChild.innerText = this.target.firstChild.firstChild.innerText;
-
-                            TweenLite.set(
-                                document.querySelectorAll(".droparea"),
-                                {
-                                    opacity: 1,
-                                    border: "2px black solid",
-                                }
-                            );
                         } else {
-                            TweenLite.to(this.target, 0.2, {
-                                x: "+=" + (dropBound.x - dragBound.x),
-                                y: "+=" + (dropBound.y - dragBound.y + 4),
-                                backgroundSize: dropBound.width + "px",
-                                width: dropBound.width,
-                            });
-                            if (overlapped_index !== null) {
-                                TweenLite.to(
-                                    document.querySelectorAll(".dragarea")[
-                                        overlapped_index
-                                    ],
-                                    0.2,
-                                    {
-                                        x: 0,
-                                        y: 0,
-                                        width: 281 + "px",
-                                        height: 47 + "px",
-                                        backgroundSize: 281 + "px",
-                                    }
-                                );
-                                TweenLite.to(
-                                    document.querySelectorAll(".dragarea")[
-                                        overlapped_index
-                                    ].children[0],
-                                    0.2,
-                                    {
-                                        top: "50%",
-                                    }
-                                );
-
-                                overlapped_index = null;
-                            }
-                            TweenLite.to(this.target.children[0], 0.2, {
-                                top: "38%",
-                            });
-                            TweenLite.set(
-                                document.querySelectorAll(".droparea"),
-                                {
-                                    opacity: 1,
-                                    border: "none",
-                                }
-                            );
-                            let model = {};
-                            model.question_index =
-                                self.jsonQuestions.data.questions[
-                                    self.$store.state.homework.questionIndex
-                                ].question_index;
-                            model.option = this.target
-                                .getAttribute("id")
-                                .replace("option", "");
-                            model.option_matched = document
+                            //element hit-test passed so i want to postion it in the droparea and scale dragarea to cover droparea
+                            const dropBound = document
                                 .querySelectorAll(".droparea")
-                                [foundIndex].getAttribute("id")
-                                .replace("empty", "");
+                                [foundIndex].getBoundingClientRect();
+                            const dragBound = this.target.getBoundingClientRect();
+                            if (
+                                document.querySelectorAll(
+                                    ".empty_rect.droparea"
+                                ).length > 0
+                            ) {
+                                TweenLite.to(this.target, 0.5, {
+                                    opacity: 0,
+                                });
+                                TweenLite.set(this.target, {
+                                    x: 0,
+                                    y: 0,
+                                });
+                                TweenLite.to(this.target, 0.5, {
+                                    opacity: 1,
+                                });
+                                document.querySelectorAll(".droparea")[
+                                    foundIndex
+                                ].firstChild.firstChild.innerText = this.target.firstChild.firstChild.innerText;
 
-                            if (model.option && model.option_matched) {
-                                self.$store.commit(
-                                    "homework/addMatching",
-                                    model
+                                TweenLite.set(
+                                    document.querySelectorAll(".droparea"),
+                                    {
+                                        opacity: 1,
+                                        border: "2px black solid",
+                                    }
                                 );
+                            } else {
+                                TweenLite.to(this.target, 0.2, {
+                                    x: "+=" + (dropBound.x - dragBound.x),
+                                    y: "+=" + (dropBound.y - dragBound.y + 4),
+                                    backgroundSize: dropBound.width + "px",
+                                    width: dropBound.width,
+                                });
+                                if (overlapped_index !== null) {
+                                    TweenLite.to(
+                                        document.querySelectorAll(".dragarea")[
+                                            overlapped_index
+                                        ],
+                                        0.2,
+                                        {
+                                            x: 0,
+                                            y: 0,
+                                            width: 281 + "px",
+                                            height: 47 + "px",
+                                            backgroundSize: 281 + "px",
+                                        }
+                                    );
+                                    TweenLite.to(
+                                        document.querySelectorAll(".dragarea")[
+                                            overlapped_index
+                                        ].children[0],
+                                        0.2,
+                                        {
+                                            top: "50%",
+                                        }
+                                    );
+
+                                    overlapped_index = null;
+                                }
+                                TweenLite.to(this.target.children[0], 0.2, {
+                                    top: "38%",
+                                });
+                                TweenLite.set(
+                                    document.querySelectorAll(".droparea"),
+                                    {
+                                        opacity: 1,
+                                        border: "none",
+                                    }
+                                );
+                                let model = {};
+                                model.question_index =
+                                    self.jsonQuestions.data.questions[
+                                        self.$store.state.homework.questionIndex
+                                    ].question_index;
+                                model.option = this.target
+                                    .getAttribute("id")
+                                    .replace("option", "");
+                                model.option_matched = document
+                                    .querySelectorAll(".droparea")
+                                    [foundIndex].getAttribute("id")
+                                    .replace("empty", "");
+
+                                if (model.option && model.option_matched) {
+                                    self.$store.commit(
+                                        "homework/addMatching",
+                                        model
+                                    );
+                                }
                             }
                         }
                     },
@@ -464,11 +469,13 @@ export default {
             }
         },
         matcher() {
+            debugger;
             if (document.getElementsByClassName("match")[0]) {
                 var clicked = [];
                 var hoverElement;
                 var lineElem;
                 function drawLineXY(fromXY, toXY) {
+                    debugger;
                     if (
                         !document.querySelector(".question-area-canvas canvas")
                     ) {
@@ -613,12 +620,12 @@ export default {
                             this.callAnswers();
                             this.setShowAnswers();
                         }
-                        console.log("starthomework");
                         const self = this;
                         setTimeout(function () {
                             self.startHomework();
                         }, 200);
                     } else {
+                        this.setQuestionCount(res.data.questions.length);
                         this.homework_headers.question_count =
                             res.data.questions.length;
                         this.homework_headers.title = res.data.homework_name;
@@ -629,8 +636,6 @@ export default {
                     this.$store.commit("homework/toggleHomeworkValidity");
                 }
             });
-            this.dragger();
-            this.matcher();
         },
         toggleShow() {
             this.isShown = !this.isShown;
@@ -650,6 +655,7 @@ export default {
                 this.$emit("go-back");
             } else {
                 this.changeQuestion("prev");
+                this.screenshot();
                 this.$emit("toggle-modal", ".save-and-exit-modal");
             }
         },
@@ -670,18 +676,43 @@ export default {
                 this.homework.data.questions[0].id
             );
             this.$store.commit("homework/setTime");
+
+            setTimeout(() => {
+                this.dragger();
+            }, 100);
+            setTimeout(() => {
+                this.matcher();
+            }, 100);
         },
         async screenshot() {
-            return await html2canvas(
-                document.querySelector(".main-question-area"),
-                {
-                    allowTaint: true,
-                }
-            );
+            if (!this.isDone) {
+                this.toggleScreenshot();
+                await html2canvas(
+                    document.querySelector(".main-question-area"),
+                    {
+                        allowTaint: true,
+                        scale: 0.75,
+                    }
+                ).then((canvas) => {
+                    canvas.toBlob((blob) => {
+                        this.toggleScreenshot();
+                        const reader = new FileReader();
+                        console.log(blob);
+                        reader.readAsDataURL(blob);
+                        reader.onloadend = () => {
+                            this.setScreenshot(reader.result);
+                            console.log(reader.result);
+                        };
+                    });
+                });
+            }
         },
         ...mapActions({
             callAnswers: "homework/callAnswers",
             setShowAnswers: "homework/setShowAnswers",
+            toggleScreenshot: "homework/callToggleScreenshot",
+            setScreenshot: "homework/setScreenshot",
+            setQuestionCount: "homework/setQuestionCount",
         }),
     },
 
@@ -706,6 +737,7 @@ export default {
         },
         ...mapGetters({
             showAnswers: "homework/showAnswers",
+            isDone: "homework/isDone",
         }),
     },
 };

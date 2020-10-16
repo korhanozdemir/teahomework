@@ -130,7 +130,9 @@ export default {
         // whenever question changes, this function will run
         jsonQuestions: function () {
             this.question = this.jsonQuestions.data.questions;
-            this.getData(this.question[0].id);
+            if ([0, 1, 2, 5].includes(this.question[0].question_type)) {
+                this.getData(this.question[0].id);
+            }
         },
 
         preQuestion: function () {
@@ -249,6 +251,7 @@ export default {
                           new Date() -
                               this.$store.getters["homework/questionTime"]
                       ) / 1000;
+                model.question_id = question_id;
                 questionResult.push(model);
             }
             if (
@@ -297,9 +300,14 @@ export default {
                             .replace("empty", "");
                         model.option_matched = option.id;
                         model.time = time;
+                        model.question_id = question_id;
                         questionResult.push(model);
                     }
                 }
+
+                questionResult = questionResult.length
+                    ? questionResult
+                    : [{ time: time, question_id: question_id }];
             }
             if (
                 this.question[this.$store.state.homework.questionIndex]
@@ -323,9 +331,12 @@ export default {
 
                 this.$store.state.homework.type2Match.forEach((element) => {
                     element.time = time;
+                    element.question_id = question_id;
                 });
 
-                questionResult = [...this.$store.state.homework.type2Match];
+                questionResult = this.$store.state.homework.type2Match.length
+                    ? [...this.$store.state.homework.type2Match]
+                    : [{ time: time, question_id: question_id }];
             }
             if (
                 this.question[this.$store.state.homework.questionIndex]
@@ -350,9 +361,8 @@ export default {
                           new Date() -
                               this.$store.getters["homework/questionTime"]
                       ) / 1000;
-                if (model.description) {
-                    questionResult.push(model);
-                }
+                model.question_id = question_id;
+                questionResult.push(model);
             }
 
             await StudentService.UpdateAllQuestionResult(
@@ -362,6 +372,7 @@ export default {
             ).then((res) => {
                 console.log(questionResult);
             });
+            await this.setStudentAnswer(questionResult);
         },
         async getData(question_id) {
             await StudentService.GetAllQuestionResult(
@@ -675,6 +686,9 @@ export default {
                 });
             }
         },
+        ...mapActions({
+            setStudentAnswer: "homework/setStudentAnswer",
+        }),
     },
 };
 </script>
@@ -691,6 +705,7 @@ export default {
     margin: auto;
     cursor: pointer;
     background-repeat: no-repeat;
+    transition: background-image 200ms linear;
 }
 .container {
     padding-left: 9px;

@@ -14,39 +14,31 @@
 </template>
 
 <script>
-    import StudentService from '../../services/student.service';
+import StudentService from "../../services/student.service";
 
-    export default {
-        mounted() {
-            console.log('Component mounted.')
+export default {
+    mounted() {
+        console.log("Component mounted.");
+    },
+    created() {
+        StudentService.getStudentDetails().then((res) => {
+            toastr.success(res.data.name, "Hoşgeldin!");
+        });
 
-        },
-        created() {
-            StudentService.getStudentDetails()
-            .then((res)=>{
-                toastr.success(res.data.name, 'Hoşgeldin!');
-            });
-
-            var questionResult = [
-                {
-                    option: 3,
-                    option_matched: true,
-                    time : 2
-                },
-                {
-                    option: 2,
-                    option_matched: true,
-                    time : 2
-                }
-            ];
-
-
-
-
-        }
-    }
+        var questionResult = [
+            {
+                option: 3,
+                option_matched: true,
+                time: 2,
+            },
+            {
+                option: 2,
+                option_matched: true,
+                time: 2,
+            },
+        ];
+    },
+};
 </script>
 
-<style>
-
-</style>
+<style></style>

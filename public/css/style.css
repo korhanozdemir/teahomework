@@ -1,0 +1,82 @@
+
+.fc-scrollgrid-sync-inner{
+    text-align: center;
+    padding: 0!important;
+}
+th.fc-col-header-cell{
+    border-left: none!important;
+    border-right: none!important;
+}
+th div.fc-scrollgrid-sync-inner{
+
+    padding: 14px!important;
+}
+.fc .fc-daygrid-day-number {
+     font-weight: 400;
+     color: #c1c1c1;
+     padding: 12px;
+ }
+.fc-daygrid-event{
+    margin-left: 0!important;
+    margin-right: 0!important;
+}
+
+
+.calendar {
+    display: flex;
+    min-height: 100%;
+    font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.demo-app-sidebar {
+    width: 0px;
+    line-height: 1.5;
+    background: #eaf9ff;
+    border-right: 1px solid #d3e2e8;
+}
+
+.demo-app-sidebar-section {
+    padding: 2em;
+}
+
+.demo-app-main {
+    flex-grow: 1;
+    padding: 3em;
+}
+
+.fc { /* the calendar root */
+    max-width: 950px;
+    margin: 0 auto;
+}
+
+.fc-scrollgrid-sync-inner{
+    text-align: center;
+    padding: 0!important;
+}
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    text-align: center;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 400;
+    color: #e7e8e9;
+}
+
+a.fc-event{
+    border: none;
+    border-left: 3px solid;
+    border-radius: 0;
+    margin-top: 3px;
+    padding: 4px
+}
+
+.fc-list-day-side-text {
+    padding-left: 0.25em!important;
+    float: none!important;
+}
+
+.fc-list-event-title span{
+    width: 100px;
+    display: block;
+}

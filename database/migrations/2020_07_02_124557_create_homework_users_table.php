@@ -17,7 +17,7 @@ class CreateHomeworkUsersTable extends Migration
             $table->id();
             $table->integer('homework_id');
             $table->integer('user_id');
-            $table->timestamp('start_date');
+            $table->timestamp('start_time');
             $table->timestamp('deadline')->nullable();
             $table->timestamp('completed_date')->nullable();
             $table->integer('point')->default(0);

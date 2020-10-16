@@ -418,7 +418,10 @@
             <div class="loading centered"></div>
         </div>
         <div class="modal info-modal-video">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.info-modal-video')"
+            ></div>
             <div>
                 <header class="modal-card-head">
                     <p class="modal-card-title">Info</p>
@@ -436,7 +439,10 @@
             </div>
         </div>
         <div class="modal info-modal-audio">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.info-modal-audio')"
+            ></div>
             <div style="width: 40vw;">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Info</p>
@@ -454,7 +460,10 @@
             </div>
         </div>
         <div class="modal info-modal-embed">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.info-modal-embed')"
+            ></div>
             <div style="width: 40vw;">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Info</p>
@@ -472,7 +481,10 @@
             </div>
         </div>
         <div class="modal info-modal-image">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.info-modal-image')"
+            ></div>
             <div>
                 <header class="modal-card-head">
                     <p class="modal-card-title">Info</p>
@@ -488,7 +500,10 @@
             </div>
         </div>
         <div class="modal info-modal-text">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.info-modal-text')"
+            ></div>
             <div>
                 <header class="modal-card-head">
                     <p class="modal-card-title">Info</p>
@@ -515,7 +530,7 @@
 </template>
 <script>
 import StudentService from "../../services/student.service";
-import { mapGetters } from "vuex";
+import { mapActions, mapGetters } from "vuex";
 import TweenLite from "gsap";
 import "html2canvas";
 import "canvas-toBlob";
@@ -623,6 +638,7 @@ export default {
             //
         },
         matcher(id) {
+            debugger;
             let same_line = true;
             if (this.temporary_target === 0) {
                 this.temporary_target = id;
@@ -764,8 +780,12 @@ export default {
                     model.option = line.id[0];
                     model.option_matched = line.id[1];
                     model.time = time;
+                    model.question_id = question_id;
                     questionResult.push(model);
                 }
+                questionResult = questionResult.length
+                    ? questionResult
+                    : [{ time: time, question_id: question_id }];
             }
 
             if (
@@ -794,9 +814,14 @@ export default {
                             model.option = check.id;
                             model.option_matched = true;
                             model.time = time;
+                            model.question_id = question_id;
                             questionResult.push(model);
                         }
                     });
+
+                    questionResult = questionResult.length
+                        ? questionResult
+                        : [{ time: time, question_id: question_id }];
                 }
             }
 
@@ -804,7 +829,8 @@ export default {
                 this.$store.state.homework.homeworkId,
                 question_id,
                 questionResult
-            ).then((res) => {});
+            );
+            await this.setStudentAnswer(questionResult);
         },
         async getData(i) {
             setTimeout(this.True);
@@ -1228,6 +1254,9 @@ export default {
                 }
             }
         },
+        ...mapActions({
+            setStudentAnswer: "homework/setStudentAnswer",
+        }),
     },
     computed: {
         ...mapGetters({
@@ -1240,6 +1269,9 @@ export default {
         jsonQuestions: function () {
             this.question = this.jsonQuestions.data.questions;
 
+            if ([3, 4].includes(this.question[0].question_type)) {
+                this.getData(this.question[0].id);
+            }
             this.question.forEach((question) => {
                 if (question.question_type === 4) {
                     this.checkboxes.push({
@@ -1331,6 +1363,7 @@ canvas {
 }
 .check {
     position: absolute;
+    transition: background-image 200ms linear;
 }
 svg {
     position: absolute;

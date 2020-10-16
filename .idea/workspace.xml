@@ -1,7 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4da385bc-8c5e-4cfc-b992-eece366d0e6e" name="Default Changelist" comment="dddd" />
+    <list default="true" id="4da385bc-8c5e-4cfc-b992-eece366d0e6e" name="Default Changelist" comment="dddd">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/cal_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/cancel_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/class_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/comment_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/confirm_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/edit_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/homework_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/homework_icon_pencil.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/image_icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/list_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/loading.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/logout_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/liconlar/notification_icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/class-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/homework-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/matching_option_image_correct.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/matching_option_image_wrong.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/services/teacher.service.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/Index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/homework.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/teacher.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/HomeworkStudentResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/HomeworkStudentResultController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_02_124557_create_homework_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_02_124557_create_homework_users_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Pages/StudentPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Pages/StudentPage.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/answer-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/answer-area.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/list.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/main-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/main-area.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/next.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/next.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/previous.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/previous.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/question-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/question-area.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/test-calendar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/test-calendar.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/components/Teacher/student-reports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Teacher/student-reports.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/services/api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/services/api.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/services/student.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/services/student.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/teacher.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,8 +82,48 @@
   <component name="ComposerSettings" doNotAsk="true">
     <execution />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Vue Single File Component" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="Vuex_test" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
+  <component name="JsFlowSettings">
+    <service-enabled>true</service-enabled>
+    <exe-path />
+    <other-services-enabled>true</other-services-enabled>
+    <auto-save>true</auto-save>
+  </component>
+  <component name="NamedScopeManager">
+    <scope name="Unnamed" pattern="file[teahomework]:resources/*||file[teahomework]:resources//*" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -33,10 +145,13 @@
   </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="NewWatcherDialog.advanced.open" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -44,27 +159,49 @@
     <property name="WebServerToolWindowPanel.toolwindow.show.size" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\MAMP\htdocs\teahomework2\node_modules\prettier" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="run.prettier.on.save" value="true" />
+    <property name="settings.editor.selected.configurable" value="com.github.izhangzhihao.rainbow.brackets.settings.RainbowConfigurable" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\teahomework2\resources\assets\liconlar" />
+      <recent name="C:\MAMP\htdocs\teahomework2\resources\views\layouts" />
+      <recent name="C:\MAMP\htdocs\teahomework2\app\Http\Controllers\Api\Student" />
       <recent name="$PROJECT_DIR$/resources/lang" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Api" />
-      <recent name="$PROJECT_DIR$/resources/js/services" />
-      <recent name="$PROJECT_DIR$/resources/js/components/Pages" />
-      <recent name="$PROJECT_DIR$/resources/views" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\MAMP\htdocs\teahomework2\public\images\liconlar" />
       <recent name="$PROJECT_DIR$/storage/images/questions" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JavaScript Debug.main-calendar.vue">
+    <configuration name="main-calendar.vue" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://terrahomework.hdavip.net/resources/js/components/Student/main-calendar.vue">
+      <method v="2" />
+    </configuration>
+    <configuration name="teahomework.com" type="JavascriptDebugType" nameIsGenerated="true" uri="http://teahomework.com">
+      <method v="2" />
+    </configuration>
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
       <TestRunner scope="XML" />
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.teahomework.com" />
+      <item itemvalue="JavaScript Debug.main-calendar.vue" />
+      <item itemvalue="PHPUnit.phpunit.xml" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.main-calendar.vue" />
+      </list>
+    </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -116,18 +253,130 @@
       <workItem from="1595252168915" duration="5030000" />
       <workItem from="1595316008202" duration="22413000" />
       <workItem from="1595403430567" duration="3614000" />
+      <workItem from="1595407821650" duration="17323000" />
+      <workItem from="1595365505195" duration="4695000" />
+      <workItem from="1595505091796" duration="7855000" />
+      <workItem from="1595535932753" duration="594000" />
+      <workItem from="1595575339543" duration="16003000" />
+      <workItem from="1595844615472" duration="16604000" />
+      <workItem from="1595797517458" duration="23604000" />
+      <workItem from="1596612275232" duration="15850000" />
+      <workItem from="1596698993647" duration="22932000" />
+      <workItem from="1596785249191" duration="5960000" />
+      <workItem from="1597044958893" duration="15315000" />
+      <workItem from="1597130618431" duration="9995000" />
+      <workItem from="1597150029301" duration="9466000" />
+      <workItem from="1597217358136" duration="476000" />
+      <workItem from="1597217849775" duration="40000" />
+      <workItem from="1597303661772" duration="5074000" />
+      <workItem from="1597311024814" duration="15771000" />
+      <workItem from="1597390680357" duration="9739000" />
+      <workItem from="1597649029981" duration="22598000" />
+      <workItem from="1597741455971" duration="19064000" />
+      <workItem from="1597821683105" duration="618000" />
+      <workItem from="1597823012457" duration="24094000" />
+      <workItem from="1597908329580" duration="15980000" />
+      <workItem from="1597997593233" duration="2331000" />
+      <workItem from="1598000939842" duration="17845000" />
+      <workItem from="1598099667488" duration="725000" />
+      <workItem from="1598115120260" duration="21636000" />
+      <workItem from="1598340988285" duration="21480000" />
+      <workItem from="1598427417300" duration="249000" />
+      <workItem from="1598427779152" duration="18468000" />
+      <workItem from="1598513911290" duration="23242000" />
+      <workItem from="1598600544089" duration="299000" />
+      <workItem from="1598600865694" duration="20101000" />
+      <workItem from="1598858007473" duration="18422000" />
+      <workItem from="1598951848697" duration="154000" />
+      <workItem from="1598952127771" duration="5118000" />
+      <workItem from="1598961752013" duration="8562000" />
+      <workItem from="1599033057362" duration="19876000" />
+      <workItem from="1599119238410" duration="3207000" />
+      <workItem from="1599123595618" duration="15308000" />
+      <workItem from="1599208033917" duration="2805000" />
+      <workItem from="1599211579544" duration="11576000" />
+      <workItem from="1599465433711" duration="1892000" />
+      <workItem from="1599467631351" duration="659000" />
+      <workItem from="1599470620608" duration="15154000" />
+      <workItem from="1599550877062" duration="234000" />
+      <workItem from="1599551133686" duration="18792000" />
+      <workItem from="1599637673586" duration="15703000" />
+      <workItem from="1599722901321" duration="1539000" />
+      <workItem from="1599724849143" duration="12500000" />
+      <workItem from="1599811383981" duration="21896000" />
+      <workItem from="1599999139561" duration="4165000" />
+      <workItem from="1600009411750" duration="8366000" />
+      <workItem from="1600022483199" duration="2727000" />
+      <workItem from="1600069081480" duration="22480000" />
+      <workItem from="1600156249580" duration="13709000" />
+      <workItem from="1600353554259" duration="58000" />
+      <workItem from="1600417009630" duration="3006000" />
+      <workItem from="1600437331070" duration="5916000" />
+      <workItem from="1600674311733" duration="4380000" />
+      <workItem from="1600763309001" duration="8372000" />
+      <workItem from="1600932702424" duration="3372000" />
+      <workItem from="1600937488769" duration="14167000" />
+      <workItem from="1601019454325" duration="707000" />
+      <workItem from="1601020294569" duration="133000" />
+      <workItem from="1601020516277" duration="12979000" />
+      <workItem from="1601278405441" duration="14772000" />
+      <workItem from="1601369202139" duration="9571000" />
+      <workItem from="1601452336094" duration="12155000" />
+      <workItem from="1601544617437" duration="1225000" />
+      <workItem from="1601623952132" duration="4783000" />
+      <workItem from="1601885967467" duration="1298000" />
+      <workItem from="1601887330232" duration="10608000" />
+      <workItem from="1601969200884" duration="5276000" />
+      <workItem from="1601978204536" duration="7283000" />
+      <workItem from="1602058419231" duration="12015000" />
+      <workItem from="1602141627943" duration="2593000" />
+      <workItem from="1602227999243" duration="5084000" />
+      <workItem from="1602488683687" duration="908000" />
+      <workItem from="1602489615991" duration="3073000" />
+      <workItem from="1602573995676" duration="18134000" />
+      <workItem from="1602660374734" duration="3309000" />
+      <workItem from="1602668400799" duration="6794000" />
+      <workItem from="1602747339826" duration="19123000" />
+      <workItem from="1602834079364" duration="13231000" />
     </task>
+    <task id="LOCAL-00001" summary="version: Save on every question change">
+      <created>1595408141166</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1595408141166</updated>
+    </task>
+    <task id="LOCAL-00002" summary="dddd">
+      <created>1601025105143</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601025105143</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="2" />
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -135,73 +384,174 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="CHECK_CODE_SMELLS_BEFORE_PROJECT_COMMIT" value="false" />
+    <option name="CHECK_NEW_TODO" value="false" />
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="version: Save on every question change" />
+    <MESSAGE value="dddd" />
+    <option name="LAST_COMMIT_MESSAGE" value="dddd" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="96" key="#Deployment" timestamp="1594476116678">
-      <screen x="0" y="23" width="1440" height="817" />
+    <state x="341" y="74" key="#Deployment" timestamp="1601978253930">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="-1494" y="93" key="#Deployment/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601978225722" />
+    <state x="341" y="74" key="#Deployment/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1601978253930" />
+    <state x="2346" y="93" key="#Deployment/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599470894999" />
+    <state x="341" y="74" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1598269231977" />
     <state x="320" y="96" key="#Deployment/0.23.1440.817@0.23.1440.817" timestamp="1594476116678" />
     <state x="320" y="96" key="#Deployment/0.23.1440.821@0.23.1440.821" timestamp="1594475799985" />
-    <state x="345" y="110" key="#Options" timestamp="1594471753038">
-      <screen x="0" y="23" width="1440" height="817" />
+    <state x="-1368" y="178" width="816" height="729" key="#Intentions" timestamp="1600763410808">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1368" y="178" width="816" height="729" key="#Intentions/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600763410808" />
+    <state x="368" y="88" key="#Options" timestamp="1597061941702">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="368" y="88" key="#Options/0.0.1536.824@0.0.1536.824" timestamp="1597061941702" />
     <state x="345" y="110" key="#Options/0.23.1440.817@0.23.1440.817" timestamp="1594471753038" />
-    <state x="304" y="83" key="#SSH_Configurations" timestamp="1594476073629">
-      <screen x="0" y="23" width="1440" height="817" />
+    <state x="2325" y="77" key="#SSH_Configurations" timestamp="1599470888487">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="2325" y="77" key="#SSH_Configurations/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599470888487" />
+    <state x="324" y="61" key="#SSH_Configurations/0.0.1536.824@0.0.1536.824" timestamp="1597062006613" />
     <state x="304" y="83" key="#SSH_Configurations/0.23.1440.817@0.23.1440.817" timestamp="1594476073629" />
-    <state x="1981" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1594281332214">
-      <screen x="0" y="23" width="3440" height="1334" />
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598341062893">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1598341062893" />
+    <state x="533" y="214" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1598003342004">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="533" y="214" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1598003342004" />
+    <state x="-814" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1601886521044">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-814" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601886521044" />
+    <state x="885" y="253" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598951963328" />
     <state x="1981" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594281332214" />
     <state x="141" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594477935628">
       <screen x="0" y="23" width="1440" height="817" />
     </state>
     <state x="141" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.817@0.23.1440.817" timestamp="1594477935628" />
-    <state x="850" y="280" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1594455385696">
-      <screen x="0" y="23" width="1440" height="815" />
+    <state x="810" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598264383407">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="810" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598264383407" />
     <state x="850" y="280" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.815@0.23.1440.815" timestamp="1594455385696" />
     <state x="2031" y="444" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594304953759" />
     <state x="2031" y="452" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594972495173">
       <screen x="0" y="23" width="3440" height="1334" />
     </state>
     <state x="2031" y="452" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594972495173" />
-    <state x="652" y="39" key="CommitChangelistDialog2" timestamp="1593762756974">
-      <screen x="0" y="23" width="3440" height="1334" />
-    </state>
-    <state x="273" y="33" key="CommitChangelistDialog2/0.23.1440.815@0.23.1440.815" timestamp="1593708306960" />
-    <state x="652" y="39" key="CommitChangelistDialog2/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1593762756974" />
-    <state x="1454" y="514" key="NewPhpClassDialog" timestamp="1594196031464">
-      <screen x="0" y="23" width="3440" height="1334" />
-    </state>
-    <state x="1454" y="514" key="NewPhpClassDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594196031464" />
-    <state x="1802" y="329" key="SettingsEditor" timestamp="1594295474028">
-      <screen x="0" y="23" width="3440" height="1334" />
-    </state>
-    <state x="1802" y="329" key="SettingsEditor/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594295474028" />
-    <state x="2098" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1593762758700">
-      <screen x="0" y="23" width="3440" height="1334" />
-    </state>
-    <state x="2098" y="614" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1593762758700" />
-    <state x="893" y="261" width="562" height="534" key="find.popup" timestamp="1594998445515">
+    <state x="516" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600164303409">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="893" y="261" width="562" height="534" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1594998445515" />
+    <state x="516" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600164303409" />
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog" timestamp="1599046961362">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1599046961362" />
+    <state x="530" y="147" width="660" height="677" key="EditFileWatcherDialog" timestamp="1598867163443">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="530" y="147" width="660" height="677" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1598867163443" />
+    <state x="-1259" y="215" key="FileChooserDialogImpl" timestamp="1600782590855">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1259" y="215" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600782590855" />
+    <state x="529" y="170" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1600692201639" />
+    <state x="529" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597062115671" />
+    <state x="1920" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1596722170284">
+      <screen x="1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1920" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1596722170284" />
+    <state x="-1083" y="176" width="1166" height="824" key="SettingsEditor" timestamp="1601969637153">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1083" y="176" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601969637153" />
+    <state x="162" y="0" width="1166" height="824" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1600694944298" />
+    <state x="370" y="0" width="981" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598867164996" />
+    <state x="1802" y="329" key="SettingsEditor/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594295474028" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1595408437524">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595408437524" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599047744851">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1599047744851" />
+    <state x="-1804" y="117" width="1688" height="806" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601302749877">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1804" y="117" width="1688" height="806" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601302749877" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1599137588456" />
+    <state x="-1541" y="191" width="1437" height="849" key="find.popup" timestamp="1602856103094">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1541" y="191" width="1437" height="849" key="find.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602856103094" />
+    <state x="302" y="166" width="1149" height="592" key="find.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1600440399542" />
+    <state x="2320" y="141" width="1437" height="801" key="find.popup/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1596722578894" />
+    <state x="302" y="166" width="1149" height="592" key="find.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600160544566" />
+    <state x="2291" y="235" width="1437" height="801" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599551488637" />
+    <state x="302" y="166" width="1149" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599225966536" />
     <state x="2000" y="445" width="586" height="490" key="find.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594627819666" />
-    <state x="627" y="168" key="ftp.server.browser" timestamp="1594476097369">
-      <screen x="0" y="23" width="1440" height="817" />
+    <state x="464" y="204" width="850" height="538" key="ftp.server.browser" timestamp="1597062247556">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="464" y="204" width="850" height="538" key="ftp.server.browser/0.0.1536.824@0.0.1536.824" timestamp="1597062247556" />
     <state x="627" y="168" key="ftp.server.browser/0.23.1440.817@0.23.1440.817" timestamp="1594476097369" />
-    <state x="1958" y="325" key="run.anything.popup" timestamp="1594979706181">
-      <screen x="0" y="23" width="3440" height="1334" />
+    <state x="569" y="201" key="git4idea.merge.GitPullDialog" timestamp="1595415409487">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="569" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1595415409487" />
+    <state x="590" y="307" key="publish.login" timestamp="1597061973385">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="590" y="307" key="publish.login/0.0.1536.824@0.0.1536.824" timestamp="1597061973385" />
+    <state x="-827" y="235" key="run.anything.popup" timestamp="1602599317596">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-827" y="235" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602599317596" />
+    <state x="3013" y="235" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1596704099419" />
+    <state x="874" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598953678273" />
     <state x="1958" y="325" key="run.anything.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594979706181" />
-    <state x="1958" y="328" width="670" height="676" key="search.everywhere.popup" timestamp="1594388229604">
-      <screen x="0" y="23" width="3440" height="1334" />
+    <state x="653" y="328" width="486" height="395" key="scopes" timestamp="1598009544475">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="820" y="209" width="670" height="413" key="search.everywhere.popup/0.23.1440.815@0.23.1440.815" timestamp="1593708518093" />
+    <state x="653" y="328" width="486" height="395" key="scopes/0.0.1536.824@0.0.1536.824" timestamp="1598009544475" />
+    <state x="630" y="187" width="672" height="419" key="search.everywhere.popup" timestamp="1600171117166">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="3013" y="238" width="374" height="528" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1595939337828" />
+    <state x="630" y="187" width="672" height="419" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600171117166" />
+    <state x="630" y="187" width="672" height="419" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599209885752" />
     <state x="1958" y="328" width="670" height="676" key="search.everywhere.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594388229604" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/Student/question-area.vue</url>
+          <line>14</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/Student/Home.vue</url>
+          <line>755</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/Student/Home.vue</url>
+          <line>605</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/resources/js/components/Student/Home.vue</url>
+          <line>606</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

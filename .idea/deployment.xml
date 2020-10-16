@@ -1,14 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="teahomework.hdavip.net">
+  <component name="PublishConfigData" autoUpload="Always" serverName="teahomework.hdavip.net">
     <serverData>
+      <paths name="tea.ariokullari.k12.tr">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/app" />
+            <excludedPath path="/bootstrap" />
+            <excludedPath path="/config" />
+            <excludedPath path="/database" />
+            <excludedPath path="/node_modules" />
+            <excludedPath path="/routes" />
+            <excludedPath path="/storage" />
+            <excludedPath path="/vendor" />
+            <excludedPath path="/.env" />
+            <excludedPath path="/package.json" />
+            <excludedPath path="/composer.json" />
+            <excludedPath path="/Archive.zip" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
       <paths name="teahomework.hdavip.net">
         <serverdata>
           <mappings>
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
+          <excludedPaths>
+            <excludedPath path="/app" />
+            <excludedPath path="/bootstrap" />
+            <excludedPath path="/config" />
+            <excludedPath path="/database" />
+            <excludedPath path="/node_modules" />
+            <excludedPath path="/routes" />
+            <excludedPath path="/storage" />
+            <excludedPath path="/vendor" />
+            <excludedPath path="/.env" />
+            <excludedPath path="/package.json" />
+            <excludedPath path="/composer.json" />
+            <excludedPath path="/Archive.zip" />
+          </excludedPaths>
         </serverdata>
       </paths>
     </serverData>
+    <option name="myAutoUpload" value="ALWAYS" />
   </component>
 </project>

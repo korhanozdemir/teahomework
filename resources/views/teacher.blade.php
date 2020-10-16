@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.layout')
 @section('content')
-    <teacher-page></teacher-page>
+    <teacher/>
 @endsection

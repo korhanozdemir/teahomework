@@ -801,7 +801,7 @@ class DatabaseSeeder extends Seeder
             [
                 'homework_id' => 1,
                 'user_id' => 436,
-                'start_date' => "2020-07-07 11:53:00",
+                'start_time' => "2020-07-07 11:53:00",
                 'deadline' => "2020-08-31 11:53:00",
                 'point' => 0,
                 'total_time' => 600,
@@ -809,7 +809,7 @@ class DatabaseSeeder extends Seeder
             [
                 'homework_id' => 2,
                 'user_id' => 436,
-                'start_date' => "2020-07-07 11:53:00",
+                'start_time' => "2020-07-07 11:53:00",
                 'deadline' => "2020-08-31 11:53:00",
                 'point' => 0,
                 'total_time' => 600,
@@ -817,7 +817,7 @@ class DatabaseSeeder extends Seeder
             [
                 'homework_id' => 3,
                 'user_id' => 436,
-                'start_date' => "2020-07-07 11:53:00",
+                'start_time' => "2020-07-07 11:53:00",
                 'deadline' => "2020-08-31 11:53:00",
                 'point' => 0,
                 'total_time' => 600,
@@ -825,7 +825,7 @@ class DatabaseSeeder extends Seeder
             [
                 'homework_id' => 4,
                 'user_id' => 436,
-                'start_date' => "2020-07-07 11:53:00",
+                'start_time' => "2020-07-07 11:53:00",
                 'deadline' => "2020-08-31 11:53:00",
                 'point' => 0,
                 'total_time' => 600,

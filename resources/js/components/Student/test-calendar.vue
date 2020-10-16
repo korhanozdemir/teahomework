@@ -6,6 +6,7 @@ import interactionPlugin from "@fullcalendar/interaction";
 import StudentService from "../../services/student.service";
 import Home from "./Home";
 import trLocale from "@fullcalendar/core/locales/tr";
+import { mapGetters } from "vuex";
 
 export default {
     name: "test-calendar",
@@ -65,6 +66,7 @@ export default {
         callHomeworkModule(clickInfo) {
             const event = clickInfo.event._def;
             this.homeworkId = event.publicId;
+            debugger;
             this.$store.commit(
                 "homework/setDeadline",
                 clickInfo.event._instance.range.end
@@ -238,13 +240,22 @@ export default {
     mounted() {
         this.createEvents();
     },
+    computed: {
+        ...mapGetters({
+            isScreenshot: "homework/isScreenshot",
+            questionCount: "homework/getQuestionCount",
+        }),
+        disabled: function () {
+            return !!this.isScreenshot;
+        },
+    },
 };
 </script>
 
 <template>
     <div class="calendar">
         <div class="save-and-exit-modal modal">
-            <div class="modal-background"></div>
+            <div class="modal-background" @click="toggleModal('')"></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -259,6 +270,7 @@ export default {
                 </section>
                 <footer class="modal-card-foot">
                     <button
+                        :disabled="disabled"
                         class="button is-success"
                         @click="
                             submitHomework('.save-and-exit-modal');
@@ -277,7 +289,10 @@ export default {
             </div>
         </div>
         <div class="back-to-calendar-modal modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.back-to-calendar-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -312,7 +327,10 @@ export default {
             </div>
         </div>
         <div class="time-is-up-modal modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.time-is-up-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -327,40 +345,6 @@ export default {
                     yüklendi. Bundan sonra yapacaklarınzıın puanınıza bir etkisi
                     olmayacaktır.
                 </section>
-            </div>
-        </div>
-        <div class="start-homework-modal modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Uyarı</p>
-                    <button
-                        class="delete"
-                        @click="toggleModal('.save-and-exit-modal')"
-                        aria-label="close"
-                    ></button>
-                </header>
-                <section class="modal-card-body">
-                    Bu ödeve başlamak istediğinize emin misiniz? Toplam süreniz
-                    {{}}
-                </section>
-                <footer class="modal-card-foot">
-                    <button
-                        class="button is-success"
-                        @click="
-                            toggleModal('.save-and-exit-modal');
-                            goBack();
-                        "
-                    >
-                        KAYDET VE ÇIK
-                    </button>
-                    <button
-                        class="button"
-                        @click="toggleModal('.save-and-exit-modal')"
-                    >
-                        İPTAL
-                    </button>
-                </footer>
             </div>
         </div>
         <Home

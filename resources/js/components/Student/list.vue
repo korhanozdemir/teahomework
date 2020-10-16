@@ -41,11 +41,7 @@ export default {
                         displayEventEnd: false,
                     },
                 },
-                headerToolbar: {
-                    left: "prev,next",
-                    center: "title",
-                    right: "today",
-                },
+                headerToolbar: false,
                 initialView: "listYear",
                 editable: false,
                 selectable: false,
@@ -201,7 +197,9 @@ export default {
                             previous.previousWaiting[i].teacher_comment === null
                                 ? ""
                                 : previous.previousWaiting[i].teacher_comment;
-                        model.submit_date = "";
+                        model.submit_date = this.formatDate(
+                            previous.previousWaiting[i].deadline
+                        );
                         this.incompleteEvents.push(model);
                     }
                 }
@@ -257,7 +255,9 @@ export default {
                             future.futureWaiting[i].teacher_comment === null
                                 ? ""
                                 : future.futureWaiting[i].teacher_comment;
-                        model.submit_date = "";
+                        model.submit_date = this.formatDate(
+                            future.futureWaiting[i].deadline
+                        );
                         this.incompleteEvents.push(model);
                     }
                 }
@@ -327,9 +327,14 @@ export default {
     },
     computed: {
         ...mapGetters({
+            isScreenshot: "homework/isScreenshot",
+            questionCount: "homework/getQuestionCount",
             getNotificationClicked: "getNotification_clickedStatus",
             getNotificationHomeworkID: "getNotificationHomeworkID",
         }),
+        disabled: function () {
+            return !!this.isScreenshot;
+        },
     },
 };
 </script>
@@ -337,7 +342,10 @@ export default {
 <template>
     <div class="calendar">
         <div class="save-and-exit-modal modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.save-and-exit-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -352,6 +360,7 @@ export default {
                 </section>
                 <footer class="modal-card-foot">
                     <button
+                        :disabled="disabled"
                         class="button is-success"
                         @click="
                             submitHomework('.save-and-exit-modal');
@@ -370,7 +379,10 @@ export default {
             </div>
         </div>
         <div class="back-to-calendar-modal modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.back-to-calendar-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -405,7 +417,10 @@ export default {
             </div>
         </div>
         <div class="time-is-up-modal modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.time-is-up-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -420,40 +435,6 @@ export default {
                     yüklendi. Bundan sonra yapacaklarınzıın puanınıza bir etkisi
                     olmayacaktır.
                 </section>
-            </div>
-        </div>
-        <div class="start-homework-modal modal">
-            <div class="modal-background"></div>
-            <div class="modal-card">
-                <header class="modal-card-head">
-                    <p class="modal-card-title">Uyarı</p>
-                    <button
-                        class="delete"
-                        @click="toggleModal('.save-and-exit-modal')"
-                        aria-label="close"
-                    ></button>
-                </header>
-                <section class="modal-card-body">
-                    Bu ödeve başlamak istediğinize emin misiniz? Toplam süreniz
-                    {{}}
-                </section>
-                <footer class="modal-card-foot">
-                    <button
-                        class="button is-success"
-                        @click="
-                            toggleModal('.save-and-exit-modal');
-                            goBack();
-                        "
-                    >
-                        KAYDET VE ÇIK
-                    </button>
-                    <button
-                        class="button"
-                        @click="toggleModal('.save-and-exit-modal')"
-                    >
-                        İPTAL
-                    </button>
-                </footer>
             </div>
         </div>
         <Home

@@ -1,18 +1,42 @@
 <template>
     <div>
-        <button class="button is-success back" @click="goBack">
+        <button
+            class="button is-success back"
+            @click="goBack"
+            v-show="stage > 1"
+        >
             GERİ
         </button>
         <vue-good-table
+            :key="1"
+            v-if="(getUser===1 && getTab === 0 && stage === 1)"
             :columns="columns"
             :rows="rows"
             @on-row-click="formatTable"
-            :sort-options="{
-                enabled: false,
+            @on-page-change="onPageChange"
+            @on-sort-change="onSortChange"
+            @on-column-filter="onColumnFilter"
+            :class="{ 'padding-top-120': stage < 2 }"
+            :isLoading.sync="loading"
+            :pagination-options="{
+                enabled: true,
+                mode: 'pages',
+                perPage: 20,
+                perPageDropdown: [20],
+                dropdownAllowAll: false,
+                nextLabel: 'sonraki',
+                prevLabel: 'önceki',
+                rowsPerPageLabel: 'Sayfa başı satır sayısı',
+                ofLabel: '',
+                pageLabel: 'sayfa', // for 'pages' mode
             }"
+            mode="remote"
+            :totalRows="totalRecords"
             styleClass="vgt-table condensed striped bordered"
             class="main-table"
-        >
+            ><div slot="emptystate">
+                Bu kategoride henüz bir veri yok.
+            </div>
             <template slot="table-row" slot-scope="props">
                 <span v-if="props.column.field === 'comment'">
                     <button
@@ -47,6 +71,183 @@
                         Not verildi
                     </button>
                 </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'answer_image' &&
+                        props.row.answer_image === undefined
+                    "
+                >
+                    <img
+                        src="images/liconlar/loading.svg"
+                        style="width: 30px;"
+                        alt=""
+                    />
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'answer_image' &&
+                        props.row.answer_image
+                    "
+                >
+                    <button
+                        class="image-button button is-info"
+                        @click="showScreenshot(props.row)"
+                    ></button>
+                </span>
+
+                <span v-else-if="props.column.field === 'delete'">
+                    <button
+                        class="delete-button button is-danger"
+                        @click="deleteHomework(props.row)"
+                    >
+                        Ödevi Sil
+                    </button>
+                </span>
+                <span
+                    v-else-if="
+                        (props.column.field === 'score' &&
+                            props.row.isSubmitBool) ||
+                        props.column.type === 'percentage'
+                    "
+                >
+                    <div class="bg">
+                        <div
+                            class="html"
+                            :style="{
+                                width: props.formattedRow[props.column.field],
+                            }"
+                        ></div>
+                        <span class="percentage">{{
+                            props.formattedRow[props.column.field]
+                        }}</span>
+                    </div> </span
+                ><span
+                    v-else-if="
+                        props.column.field === 'deadline' && getTab === 0
+                    "
+                >
+                    <span
+                        v-if="
+                            !pickDateTime ||
+                            !(props.row.originalIndex === deadlineIndex)
+                        "
+                        ><span>{{
+                            props.formattedRow[props.column.field]
+                        }}</span>
+                        <button
+                            class="edit-button button is-warning"
+                            @click="edit(props.row)"
+                        ></button
+                    ></span>
+                    <span v-else>
+                        <datetime
+                            zone="UTC+3"
+                            :min-datetime="minDatetime"
+                            type="datetime"
+                            v-model="deadline"
+                        ></datetime>
+                        <button
+                            class="confirm-button button is-success"
+                            @click="confirmEdit"
+                        ></button
+                        ><button
+                            class="cancel-button button is-danger"
+                            @click="cancel"
+                        ></button>
+                    </span>
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'isSubmit' &&
+                        compareDates(
+                            props.row.isSubmit,
+                            chosen_homework.deadline
+                        )
+                    "
+                    style="color: red;"
+                >
+                    {{ props.formattedRow[props.column.field] }}
+                </span>
+                <span v-else>
+                    {{ props.formattedRow[props.column.field] }}
+                </span>
+            </template>
+        </vue-good-table>
+
+        <vue-good-table
+            :key="2"
+            :columns="columns"
+            :rows="rows"
+            :class="{ 'padding-top-120': stage < 2 }"
+            :isLoading="loading"
+            @on-row-click="formatTable"
+            :sort-options="{
+                enabled: false,
+            }"
+            v-else
+            styleClass="vgt-table condensed striped bordered"
+            class="main-table"
+            ><div slot="emptystate">
+                Bu kategoride henüz bir veri yok.
+            </div>
+            <template slot="table-row" slot-scope="props">
+                <span v-if="props.column.field === 'comment'">
+                    <button
+                        class="comment-button button is-success"
+                        @click="comment(props.row)"
+                    >
+                        Yorum yap
+                    </button>
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'grade' &&
+                        props.row.type === 'Açık Uçlu Soru' &&
+                        !props.row.isGraded
+                    "
+                >
+                    <button
+                        class="grade-button button is-success"
+                        @click="grade(props.row)"
+                    >
+                        Not ver
+                    </button>
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'grade' &&
+                        props.row.type === 'Açık Uçlu Soru' &&
+                        props.row.isGraded
+                    "
+                >
+                    <button class="grade-button button is-success" disabled>
+                        Not verildi
+                    </button>
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'answer_image' &&
+                        props.row.answer_image === undefined
+                    "
+                >
+                    <img
+                        src="images/liconlar/loading.svg"
+                        style="width: 30px;"
+                        alt=""
+                    />
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'answer_image' &&
+                        props.row.answer_image
+                    "
+                >
+                    <button
+                        class="image-button button is-info"
+                        @click="showScreenshot(props.row)"
+                    ></button>
+                </span>
+
                 <span v-else-if="props.column.field === 'delete'">
                     <button
                         class="delete-button button is-danger"
@@ -126,7 +327,10 @@
             </template>
         </vue-good-table>
         <div class="modal comment-modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.comment-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Yorum yap</p>
@@ -156,7 +360,10 @@
         </div>
 
         <div class="modal grade-modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.grade-modal')"
+            ></div>
             <div class="modal-card">
                 <section class="modal-card-body">
                     <div class="answer-block">
@@ -183,7 +390,10 @@
             </div>
         </div>
         <div class="modal delete-modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.delete-modal')"
+            ></div>
             <div class="modal-card">
                 <section class="modal-card-body">
                     <div class="answer-block">
@@ -209,7 +419,10 @@
             </div>
         </div>
         <div class="error-modal modal">
-            <div class="modal-background"></div>
+            <div
+                class="modal-background"
+                @click="toggleModal('.error-modal')"
+            ></div>
             <div class="modal-card">
                 <header class="modal-card-head">
                     <p class="modal-card-title">Uyarı</p>
@@ -225,6 +438,29 @@
                 </section>
             </div>
         </div>
+        <div class="modal screenshot-modal">
+            <div
+                class="modal-background"
+                @click="toggleModal('.screenshot-modal')"
+            ></div>
+            <div>
+                <header class="modal-card-head">
+                    <p class="modal-card-title"></p>
+                    <button
+                        class="delete"
+                        @click="toggleModal('.screenshot-modal')"
+                        aria-label="close"
+                    ></button>
+                </header>
+                <div style="position: sticky;">
+                    <img
+                        style="height: 65vh;"
+                        :src="screenshot_image_source"
+                        alt=""
+                    />
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -234,6 +470,7 @@ import { mapGetters } from "vuex";
 import { Datetime } from "vue-datetime";
 import { Settings } from "luxon";
 import moment from "moment";
+moment.locale("tr");
 Settings.defaultLocale = "tr";
 export default {
     name: "StudentReports",
@@ -243,7 +480,7 @@ export default {
             columns_homeworks: [
                 {
                     label: "Adı",
-                    field: "name",
+                    field: "homework_name",
                     filterOptions: {
                         enabled: true, // enable filter for this column
                         placeholder: "Ara", // placeholder for filter input
@@ -251,24 +488,40 @@ export default {
                 },
                 {
                     label: "Öğretmen",
-                    field: "teacher",
+                    field: "name",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Konu",
-                    field: "lecture",
+                    field: "parentlecture",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Kazanım",
-                    field: "sub_lecture",
+                    field: "lecture_name",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Seviye",
-                    field: "level",
+                    field: "course_level",
                     type: "number",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Gönderim tarihi",
-                    field: "createdAt",
+                    field: "created_at",
                     type: "date",
                     dateInputFormat: "yyyy-MM-dd HH:mm:SS",
                     dateOutputFormat: "dd.MM.yyyy HH:mm",
@@ -282,12 +535,12 @@ export default {
                 },
                 {
                     label: "Teslim oranı",
-                    field: "submit_score",
+                    field: "completed",
                     type: "percentage",
                 },
                 {
                     label: "Başarı oranı",
-                    field: "score",
+                    field: "avgpoint",
                     type: "percentage",
                 },
                 {
@@ -307,14 +560,26 @@ export default {
                 {
                     label: "Öğretmen",
                     field: "teacher",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Konu",
                     field: "lecture",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Kazanım",
                     field: "sub_lecture",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Gönderim tarihi",
@@ -345,6 +610,10 @@ export default {
                 {
                     label: "Sınıf",
                     field: "class",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Adı",
@@ -389,6 +658,10 @@ export default {
                 {
                     label: "No",
                     field: "code",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Teslim Tarihi",
@@ -425,8 +698,12 @@ export default {
                     field: "score",
                 },
                 {
-                    label: "süre",
+                    label: "Süre",
                     field: "time",
+                },
+                {
+                    label: "Görsel",
+                    field: "answer_image",
                 },
                 {
                     label: "Not ver",
@@ -437,6 +714,10 @@ export default {
                 {
                     label: "Sınıf",
                     field: "class",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
                 },
                 {
                     label: "Teslim oranı",
@@ -505,6 +786,43 @@ export default {
                     type: "percentage",
                 },
             ],
+            columns_manager_classes: [
+                {
+                    label: "Sınıf",
+                    field: "class",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
+                },
+                {
+                    label: "Ödev Sayısı",
+                    field: "homework_count",
+                },
+            ],
+            columns_manager_courses: [
+                {
+                    label: "Ders",
+                    field: "course",
+                    filterOptions: {
+                        enabled: true, // enable filter for this column
+                        placeholder: "Ara", // placeholder for filter input
+                    },
+                },
+                {
+                    label: "Ödev Sayısı",
+                    field: "homework_count",
+                },
+            ],
+            serverParams: {
+                columnFilters: {},
+                sort: {
+                    field: "",
+                    type: "",
+                },
+                page: 1,
+            },
+
             rows: [],
             homeworks: [],
             stage: 0,
@@ -513,6 +831,8 @@ export default {
             chosen_student: {},
             chosen_course: {},
             chosen_teacher: {},
+            chosen_class_manager: {},
+            chosen_homework_manager: {},
             enableClick: 1,
             chosenHomeworkUser: 0,
             answers: [],
@@ -524,176 +844,206 @@ export default {
             deadlineIndex: 0,
             minDatetime: "",
             isSort: 1,
+            screenshot_image_source: "",
+            loading: false,
+            totalRecords: 100,
         };
     },
     components: {
         datetime: Datetime,
     },
     methods: {
-        formatTable(info) {
+        async formatTable(info) {
             if (this.enableClick) {
+                this.serverParams = {
+                    columnFilters: {},
+                    sort: {
+                        field: "",
+                        type: "",
+                    },
+                    page: 1,
+                };
+                this.loading = true;
                 if (this.getUser === 1) {
                     if (this.getTab === 0) {
                         if (this.stage === 0) {
-                            this.getAllHomeworks();
+                            await this.getAllHomeworks();
+                            this.loading = false;
                             this.stage = 1;
                         } else if (this.stage === 1) {
                             if (info) {
                                 this.chosen_homework = info.row;
-                                this.getHomeworkClasses(info.row.id);
+                                await this.getHomeworkClasses(info.row.id);
+                                this.loading = false;
                             } else {
-                                this.getHomeworkClasses(
+                                await this.getHomeworkClasses(
                                     this.chosen_homework.id
                                 );
+                                this.loading = false;
                             }
-                            this.stage = 2;
                         } else if (this.stage === 2) {
                             if (info) {
                                 this.chosen_class = info.row;
-                                this.getHomeworkClassStudents(
+                                await this.getHomeworkClassStudents(
                                     this.chosen_homework.id,
                                     info.row.id
                                 );
+                                this.loading = false;
                             } else {
-                                this.getHomeworkClassStudents(
+                                await this.getHomeworkClassStudents(
                                     this.chosen_homework.id,
                                     this.chosen_class.id
                                 );
+                                this.loading = false;
                             }
                             this.stage = 3;
                         } else if (this.stage === 3) {
                             if (info) {
                                 this.chosen_student = info.row;
-                                this.getStudentAnswers(
+                                await this.getStudentAnswers(
                                     this.chosen_homework.id,
                                     info.row.id
                                 );
+                                this.loading = false;
                             } else {
-                                this.getStudentAnswers(
+                                await this.getStudentAnswers(
                                     this.chosen_homework.id,
                                     this.chosen_student.id
                                 );
+                                this.loading = false;
                             }
                             this.stage = 4;
+                        } else if (this.stage === 4) {
+                            this.loading = false;
                         }
                     }
                     if (this.getTab === 1) {
                         if (this.stage === 0) {
-                            this.getTab2Classes();
+                            await this.getTab2Classes();
+                            this.loading = false;
                             this.stage = 1;
                         } else if (this.stage === 1) {
                             if (info) {
                                 this.chosen_class = info.row;
-                                this.getTab2Homeworks(info.row.id);
+                                await this.getTab2Homeworks(info.row.id);
+                                this.loading = false;
                             } else {
-                                this.getTab2Homeworks(this.chosen_class.id);
+                                await this.getTab2Homeworks(
+                                    this.chosen_class.id
+                                );
+                                this.loading = false;
                             }
                             this.stage = 2;
                         } else if (this.stage === 2) {
                             if (info) {
                                 this.chosen_homework = info.row;
-                                this.getHomeworkClassStudents(
+                                await this.getHomeworkClassStudents(
                                     info.row.id,
                                     this.chosen_class.id
                                 );
+                                this.loading = false;
                             } else {
-                                this.getHomeworkClassStudents(
+                                await this.getHomeworkClassStudents(
                                     this.chosen_homework.id,
                                     this.chosen_class.id
                                 );
+                                this.loading = false;
                             }
                             this.stage = 3;
                         } else if (this.stage === 3) {
                             if (info) {
                                 this.chosen_student = info.row;
-                                this.getStudentAnswers(
+                                await this.getStudentAnswers(
                                     this.chosen_homework.id,
                                     info.row.id
                                 );
+                                this.loading = false;
                             } else {
-                                this.getStudentAnswers(
+                                await this.getStudentAnswers(
                                     this.chosen_homework.id,
                                     this.chosen_student.id
                                 );
+                                this.loading = false;
                             }
                             this.stage = 4;
+                        } else if (this.stage === 4) {
+                            this.loading = false;
                         }
                     }
                 }
                 if (this.getUser === 2) {
                     if (this.getTab === 0) {
                         if (this.stage === 0) {
-                            this.getCourses();
+                            await this.getCourses();
+                            this.loading = false;
                             this.stage = 1;
                         } else if (this.stage === 1) {
                             if (info) {
                                 this.chosen_course = info.row;
-                                this.getTeachers(info.row.id);
+                                await this.getTeachers(info.row.id);
+                                this.loading = false;
                             } else {
-                                this.getTeachers(this.chosen_course.id);
+                                await this.getTeachers(this.chosen_course.id);
+                                this.loading = false;
                             }
                             this.stage = 2;
                         } else if (this.stage === 2) {
                             if (info) {
                                 this.chosen_teacher = info.row;
-                                this.getHomeworkCoursesTeacher(
+                                await this.getHomeworkCoursesTeacher(
                                     this.chosen_course.id,
                                     info.row.id
                                 );
+                                this.loading = false;
                             } else {
-                                this.getHomeworkCoursesTeacher(
+                                await this.getHomeworkCoursesTeacher(
                                     this.chosen_course.id,
                                     this.chosen_teacher.id
                                 );
+                                this.loading = false;
                             }
                             this.stage = 3;
+                        } else if (this.stage === 3) {
+                            this.loading = false;
                         }
                     }
-                    /* if (this.getTab === 1) {
-                         if (this.stage === 0) {
-                             this.getTab2Classes();
-                             this.stage = 1;
-                         }
-
-                         else if (this.stage === 1) {
-                             if (info) {
-                                 this.chosen_class = info.row;
-                                 this.getTab2Homeworks(info.row.id);
-                             } else {
-                                 this.getTab2Homeworks(this.chosen_class.id);
-                             }
-                             this.stage = 2;
-                         }
-                         else if (this.stage === 2) {
-                             if (info) {
-                                 this.chosen_homework = info.row;
-                                 this.getHomeworkClassStudents(
-                                     info.row.id,
-                                     this.chosen_class.id
-                                 );
-                             } else {
-                                 this.getHomeworkClassStudents(
-                                     this.chosen_homework.id,
-                                     this.chosen_class.id
-                                 );
-                             }
-                             this.stage = 3;
-                         }
-                         else if (this.stage === 3) {
-                             if (info) {
-                                 this.chosen_student = info.row;
-                                 this.getStudentAnswers(
-                                     this.chosen_homework.id,
-                                     info.row.id
-                                 );
-                             } else {
-                                 this.getStudentAnswers(
-                                     this.chosen_homework.id,
-                                     this.chosen_student.id
-                                 );
-                             }
-                             this.stage = 4;
-                         }}*/
+                    if (this.getTab === 1) {
+                        if (this.stage === 0) {
+                            await this.getManagerClasses();
+                            this.loading = false;
+                            this.stage = 1;
+                        } else if (this.stage === 1) {
+                            if (info) {
+                                this.chosen_class_manager = info.row;
+                                await this.getManagerCourses(info.row.id);
+                                this.loading = false;
+                            } else {
+                                await this.getManagerCourses(
+                                    this.chosen_class_manager.id
+                                );
+                                this.loading = false;
+                            }
+                            this.stage = 2;
+                        } else if (this.stage === 2) {
+                            if (info) {
+                                this.chosen_homework_manager = info.row;
+                                await this.getManagerHomeworks(
+                                    this.chosen_class_manager.id,
+                                    info.row.id
+                                );
+                                this.loading = false;
+                            } else {
+                                await this.getManagerHomeworks(
+                                    this.chosen_class_manager.id,
+                                    this.chosen_homework_manager.id
+                                );
+                                this.loading = false;
+                            }
+                            this.stage = 3;
+                        } else if (this.stage === 3) {
+                            this.loading = false;
+                        }
+                    }
                 }
             }
         },
@@ -703,44 +1053,41 @@ export default {
                 this.formatTable();
             }
         },
-        async getAllHomeworks() {
-            await TeacherService.getAllHomeworks().then((res) => {
+        async getAllHomeworks(params) {
+            await TeacherService.getAllHomeworks(params).then((res) => {
                 if (res) {
                     this.columns = this.columns_homeworks;
-                    this.homeworks = res.data;
+                    this.homeworks = res.data.data;
                     this.rows = [];
                     this.homeworks.forEach((element) => {
                         this.rows.push({
                             id: element.id,
-                            name: element.homework_name,
-                            teacher: element.teacher.name,
-                            lecture: element.lecture
-                                ? element.lecture.parentlecture
-                                    ? element.lecture.parentlecture.lecture_name
-                                    : element.lecture.lecture_name
+                            homework_name: element.homework_name,
+                            name: element.name,
+                            parentlecture: element.parentlecture
+                                ? element.parentlecture
+                                : element.lecture_name,
+                            lecture_name: element.parentlecture
+                                ? element.lecture_name
                                 : "",
-                            sub_lecture: element.lecture
-                                ? element.lecture.parentlecture
-                                    ? element.lecture.lecture_name
-                                    : ""
-                                : "",
-                            level: element.course.course_level,
-                            createdAt:
-                                element.created_at.split("T")[0] +
-                                " " +
-                                element.created_at.split("T")[1].split(".")[0],
+                            course_level: element.course_level,
+                            created_at: moment(element.created_at).format(
+                                "YYYY-MM-DD HH:mm:ss"
+                            ),
                             deadline: element.deadline
-                                ? element.deadline.deadline
+                                ? element.deadline
                                 : "1970-01-01 00:00:00",
-                            score: element.point_avg / 100,
-                            submit_score: element.done_percent / 100,
+                            avgpoint: element.avgpoint / 100,
+                            completed: element.completed / 100,
                             delete: "",
                         });
                     });
+                    this.totalRecords = res.data.total;
                 }
             });
         },
         async getHomeworkClasses(homework_id) {
+            this.stage = 2;
             await TeacherService.getHomeworkClasses(homework_id).then((res) => {
                 if (res) {
                     this.columns = this.columns_classes;
@@ -751,10 +1098,10 @@ export default {
                         this.rows.push({
                             id: element.id,
                             class: element.class_name,
-                            name: this.chosen_homework.name,
-                            teacher: this.chosen_homework.teacher,
-                            lecture: this.chosen_homework.lecture,
-                            sub_lecture: this.chosen_homework.sub_lecture,
+                            name: this.chosen_homework.homework_name,
+                            teacher: this.chosen_homework.name,
+                            lecture: this.chosen_homework.parentlecture,
+                            sub_lecture: this.chosen_homework.lecture_name,
                             score: element.point_avg / 100,
                             submit_score: element.done_percent / 100,
                         });
@@ -834,9 +1181,14 @@ export default {
                                         ? "Açık Uçlu Soru"
                                         : ""
                                     : "",
-                                score: element.success_percent
-                                    ? element.success_percent + "%"
-                                    : "0%",
+                                score:
+                                    element.type === "5"
+                                        ? element.success_percent === null
+                                            ? "Not Verilmedi"
+                                            : element.success_percent + "%"
+                                        : element.success_percent
+                                        ? element.success_percent + "%"
+                                        : "0%",
                                 time:
                                     ~~(element.time / 60) +
                                     ":" +
@@ -844,22 +1196,24 @@ export default {
                                 grade: "",
                                 isSubmitBool:
                                     element.type === "5"
-                                        ? element.success_percent
-                                            ? 1
-                                            : 0
+                                        ? element.success_percent === null
+                                            ? 0
+                                            : 1
                                         : 1,
                                 isGraded:
                                     element.type === "5"
-                                        ? element.success_percent
-                                            ? 1
-                                            : 0
+                                        ? element.success_percent === null
+                                            ? 0
+                                            : 1
                                         : 0,
+                                answer_image: element.screenshot,
                             });
                             questionIndex = element.question_index;
                         });
                     }
                 }
             );
+            this.getImages(homework_id, class_id);
         },
         async getTab2Classes() {
             await TeacherService.getTab2Classes().then((res) => {
@@ -968,6 +1322,57 @@ export default {
                 }
             });
         },
+        async getManagerClasses() {
+            await TeacherService.getManagerClasses().then((res) => {
+                if (res) {
+                    this.columns = this.columns_manager_classes;
+                    const classes = res.data;
+                    this.rows = [];
+                    classes.forEach((element) => {
+                        this.rows.push({
+                            id: element.class_id,
+                            class: element.class_name,
+                            homework_count: element.count,
+                        });
+                    });
+                }
+            });
+        },
+        async getManagerCourses(class_id) {
+            await TeacherService.getManagerClasses(class_id).then((res) => {
+                if (res) {
+                    this.columns = this.columns_manager_courses;
+                    const courses = res.data;
+                    this.rows = [];
+                    courses.forEach((element) => {
+                        this.rows.push({
+                            id: element.homework_course_id,
+                            course: element.course_name,
+                            homework_count: element.count,
+                        });
+                    });
+                }
+            });
+        },
+        async getManagerHomeworks(class_id, course_id) {
+            await TeacherService.getManagerClasses(class_id, course_id).then(
+                (res) => {
+                    if (res) {
+                        this.columns = this.columns_manager_homeworks;
+                        const homeworks = res.data;
+                        this.rows = [];
+                        homeworks.forEach((element) => {
+                            this.rows.push({
+                                id: element.homework_id,
+                                name: element.homework_name,
+                                submit_score: element.completed / element.count,
+                                score: Number(element.avg) / 100,
+                            });
+                        });
+                    }
+                }
+            );
+        },
         async comment(info) {
             //TODO
             const self = this;
@@ -1021,6 +1426,10 @@ export default {
             this.chosenAnswerId = info.id;
 
             this.toggleModal(".grade-modal");
+        },
+        showScreenshot(info) {
+            this.screenshot_image_source = info.answer_image;
+            this.toggleModal(".screenshot-modal");
         },
         async postGrade() {
             await TeacherService.rateQuestion(
@@ -1093,6 +1502,80 @@ export default {
                 return false;
             }
         },
+        getImages(homework_id, student_id) {
+            TeacherService.getStudentAnswers(homework_id, student_id, 1).then(
+                (res) => {
+                    this.rows = [
+                        ...this.rows.map((row) => {
+                            row.answer_image = res.data.filter((answer) => {
+                                return (
+                                    answer.question_index === row.question_index
+                                );
+                            })[0].screenshot;
+                            return row;
+                        }),
+                    ];
+                }
+            );
+        },
+        updateParams(newProps) {
+            this.serverParams = Object.assign({}, this.serverParams, newProps);
+        },
+
+        onPageChange(params) {
+            this.updateParams({ page: params.currentPage });
+            this.loadItems();
+        },
+        onSortChange(params) {
+            if (!(params[0].field === "delete")) {
+                this.updateParams({
+                    sort: [
+                        {
+                            type:
+                                params[0].type[0].toUpperCase() +
+                                params[0].type.substring(1),
+                            field: params[0].field,
+                        },
+                    ],
+                });
+            }
+            this.loadItems();
+        },
+
+        onColumnFilter(params) {
+            this.updateParams(params);
+            this.loadItems();
+        },
+        loadItems() {
+            const page_params = this.serverParams.page
+                ? `page=${this.serverParams.page}`
+                : "";
+
+            const filter_params = Object.entries(
+                this.serverParams.columnFilters
+            )
+                .map(([k, v]) => `${k}=${v}`)
+                .join("&");
+
+            const sort_params = this.serverParams.sort[0]
+                ? `sort${this.serverParams.sort[0].type}=${this.serverParams.sort[0].field}`
+                : "";
+            this.reorderTable(`${sort_params}&${filter_params}&${page_params}`);
+        },
+
+        async reorderTable(params) {
+            if (this.enableClick) {
+                this.loading = true;
+                if (this.getUser === 1) {
+                    if (this.getTab === 0) {
+                        if (this.stage === 1) {
+                            await this.getAllHomeworks(params).then();
+                            this.loading = false;
+                        }
+                    }
+                }
+            }
+        },
     },
     mounted() {
         this.formatTable();
@@ -1107,7 +1590,7 @@ export default {
 </script>
 <style scoped>
 .main-table {
-    padding: 0 40px 65px 40px;
+    padding: 40px 40px 65px 40px;
     text-align: center;
 }
 #comment {
@@ -1124,7 +1607,7 @@ export default {
     text-align: center;
 }
 #answer {
-    height: 150px;
+    min-height: 150px;
     padding: 10px;
     border: black 1px solid;
 }
@@ -1146,6 +1629,13 @@ export default {
     width: 100%;
     height: 25px;
 }
+.button {
+    transition: opacity 150ms linear, background-color 150ms linear;
+}
+.button:hover,
+.button:focus {
+    opacity: 0.8;
+}
 .bg {
     height: 25px;
     border: 1px solid green;
@@ -1159,6 +1649,7 @@ export default {
     line-height: 30px;
     color: #000;
     background-size: 50px 50px;
+    max-width: 100%;
 }
 .percentage {
     color: black;
@@ -1187,6 +1678,15 @@ export default {
     background-size: 28px;
     width: 30px;
     height: 30px;
+}
+.image-button {
+    background: url("/images/liconlar/image_icon.svg") no-repeat;
+    background-size: 30px;
+    width: 30px;
+    height: 30px;
+}
+.padding-top-120 {
+    padding-top: 159px;
 }
 </style>
 <style>

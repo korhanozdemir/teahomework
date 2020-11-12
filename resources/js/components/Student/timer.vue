@@ -68,17 +68,30 @@
 
 <script>
 import { TweenMax } from "gsap";
+import StudentService from "../../services/student.service";
 
 export default {
     name: "timer",
     components: {},
+    data: function () {
+        return {
+            timeouts: [],
+            time: {
+                min: "",
+                sec: "",
+            },
+        };
+    },
     methods: {
-        startCountdown(time) {
-            let self = this;
-            initTimer(time); // other ways --> "0:15" "03:5" "5:2"
-            var timerEl = document.querySelector(".timer");
+        startCountdown() {
+            let self_ = this;
+            initTimer(); // other ways --> "0:15" "03:5" "5:2"
 
-            function initTimer(t) {
+            async function initTimer() {
+                if (self_.time.min === 0 && self_.time.sec === 0) {
+                    await self_.$store.commit("homework/finishHomework");
+                    self_.$emit("go-back");
+                }
                 var self = this,
                     timerEl = document.querySelector(".timer"),
                     minutesGroupEl = timerEl.querySelector(".minutes-group"),
@@ -92,11 +105,6 @@ export default {
                         secondNum: secondsGroupEl.querySelector(".second"),
                     };
 
-                var time = {
-                    min: t.split(":")[0],
-                    sec: t.split(":")[1],
-                };
-
                 var timeNumbers;
 
                 function updateTimer() {
@@ -104,17 +112,17 @@ export default {
                     var date = new Date();
 
                     date.setHours(0);
-                    date.setMinutes(time.min);
-                    date.setSeconds(time.sec);
+                    date.setMinutes(self_.time.min);
+                    date.setSeconds(self_.time.sec);
 
                     var newDate = new Date(date.valueOf() - 1000);
                     var temp = newDate.toTimeString().split(" ");
                     var temp_split = temp[0].split(":");
 
-                    time.min = temp_split[1];
-                    time.sec = temp_split[2];
+                    self_.time.min = temp_split[1];
+                    self_.time.sec = temp_split[2];
 
-                    timestr = time.min + time.sec;
+                    timestr = self_.time.min + self_.time.sec;
                     timeNumbers = timestr.split("");
                     updateTimerDisplay(timeNumbers);
 
@@ -138,33 +146,52 @@ export default {
                         y: -group.querySelector(".num-" + arrayValue).offsetTop,
                     });
                 }
-
                 setTimeout(updateTimer, 1000);
             }
 
             function countdownFinished() {
-                self.$emit("toggle-modal", ".time-is-up-modal");
-                self.$emit("submitHomework", ".time-is-up-modal");
-                setTimeout(self.$emit("go-back"), 1500);
+                self_.$emit("submitHomework", ".time-is-up-modal");
             }
+        },
+        setTimer(time_data) {
+            var minutes = Math.floor(time_data / 60);
+            var seconds = time_data - minutes * 60;
+            this.time = {
+                min: minutes,
+                sec: seconds,
+            };
         },
     },
     props: ["jsonQuestions", "isLoaded", "preQuestion"],
 
     watch: {
-        isLoaded: function () {
+        isLoaded: async function () {
             if (
                 this.jsonQuestions.data.homework_time &&
                 !this.$store.state.homework.isDone
             ) {
-                var minutes = Math.floor(
-                    this.jsonQuestions.data.homework_time / 60
-                );
-                var seconds =
-                    this.jsonQuestions.data.homework_time - minutes * 60;
-
-                let time = minutes + ":" + seconds;
-                this.startCountdown(time);
+                await StudentService.startAndGetHomeworkTimer(
+                    this.jsonQuestions.data.id
+                ).then((res) => {
+                    if (res) {
+                        this.setTimer(res.data.expires_in);
+                        this.startCountdown();
+                    }
+                });
+            }
+        },
+        preQuestion: async function () {
+            if (
+                this.jsonQuestions.data.homework_time &&
+                !this.$store.state.homework.isDone
+            ) {
+                await StudentService.startAndGetHomeworkTimer(
+                    this.jsonQuestions.data.id
+                ).then((res) => {
+                    if (res) {
+                        this.setTimer(res.data.expires_in);
+                    }
+                });
             }
         },
     },

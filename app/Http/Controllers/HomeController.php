@@ -26,6 +26,9 @@ class HomeController extends Controller
     public function index()
     {
         $role =Auth::user()->getRole();
+        if($role === "leadteacher" || $role === "admin" ){
+            $role = "teacher";
+        }
         return view($role);
     }
 }

@@ -85,6 +85,15 @@
                         placeholder="Cevabını buraya yaz."
                         class="text"
                     ></textarea>
+                    <button
+                        class="audio-recorder button is-primary"
+                        @click="
+                            toggleModal('.modal-audio');
+                            recorder();
+                        "
+                    >
+                        Ses Kaydet
+                    </button>
                 </div>
             </div>
             <div
@@ -102,6 +111,85 @@
         <div v-show="!this.$store.state.homework.isShown" class="loading-outer">
             <div class="loading centered"></div>
         </div>
+        <div class="modal modal-audio">
+            <div
+                class="modal-background"
+                @click="toggleModal('.modal-audio')"
+            ></div>
+            <div class="audio-container">
+                <div class="record-controls">
+                    <button
+                        :disabled="this.clip_submit_ok"
+                        class="record-button record"
+                    >
+                        <div class="audio-record-icon record-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                            >
+                                <path
+                                    d="M12 14c1.66 0 2.99-1.34 2.99-3L15 5c0-1.66-1.34-3-3-3S9 3.34 9 5v6c0 1.66 1.34 3 3 3zm5.3-3c0 3-2.54 5.1-5.3 5.1S6.7 14 6.7 11H5c0 3.41 2.72 6.23 6 6.72V21h2v-3.28c3.28-.48 6-3.3 6-6.72h-1.7z"
+                                ></path>
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                            </svg>
+                        </div>
+                    </button>
+                    <button
+                        :disabled="this.clip_submit_ok"
+                        class="record-button stop"
+                    >
+                        <div class="audio-record-icon stop-icon">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M0 0h24v24H0z" fill="none"></path>
+                                <path d="M6 6h12v12H6z"></path>
+                            </svg>
+                        </div>
+                    </button>
+                </div>
+
+                <div class="clip-container">
+                    <div class="clip" v-if="audio_source">
+                        <div class="clip-parts clip-part-one">
+                            <div
+                                v-if="!clip_submit_ok"
+                                class="delete"
+                                @click="deleteClip()"
+                            ></div>
+                            <p>Ses Kaydı</p>
+                        </div>
+                        <div class="clip-parts clip-part-two">
+                            <p class="duration">{{ clip_duration }}</p>
+                            <button
+                                class="record-submit button"
+                                :class="{ 'w-90': clip_submit_ok }"
+                                @click="submitClip(audio_source)"
+                                :disabled="this.clip_submit_ok"
+                            >
+                                <span v-if="clip_submit_loading"
+                                    ><img
+                                        src="images/liconlar/loading.svg"
+                                        alt=""
+                                /></span>
+                                <span v-else-if="clip_submit_ok"
+                                    >Kaydedildi</span
+                                >
+                                <span v-else>Kaydet</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="player-container" v-if="audio_source">
+                        <vue-plyr :key="audio_source">
+                            <audio>
+                                <source :src="audio_source" />
+                            </audio>
+                        </vue-plyr>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -109,7 +197,7 @@
 import StudentService from "../../services/student.service";
 import TweenLite from "gsap";
 import { mapActions, mapGetters } from "vuex";
-
+import getBlobDuration from "get-blob-duration";
 export default {
     name: "answerArea",
     props: ["jsonQuestions", "isLoaded", "preQuestion", "isShown"],
@@ -124,6 +212,10 @@ export default {
                 option_matched: true,
                 time: 2,
             },
+            audio_source: "",
+            clip_submit_loading: false,
+            clip_submit_ok: false,
+            clip_duration: "",
         };
     },
     watch: {
@@ -471,10 +563,24 @@ export default {
                 this.question[this.$store.state.homework.questionIndex]
                     .question_type === 5
             ) {
+                this.clip_submit_ok = this.answers[0].audio !== null;
                 document.querySelector(".answers_text textarea").value = this
                     .answers[0].description
                     ? this.answers[0].description
                     : "";
+
+                this.audio_source = this.answers[0].audio;
+                if (this.audio_source) {
+                    getBlobDuration(this.audio_source).then((duration) => {
+                        const minutes = ("0" + Math.floor(duration / 60)).slice(
+                            -2
+                        );
+                        const seconds = ("0" + Math.round(duration % 60)).slice(
+                            -2
+                        );
+                        this.clip_duration = `${minutes}:${seconds}`;
+                    });
+                }
             }
         },
         cleaner() {
@@ -487,6 +593,9 @@ export default {
                     .question_type === 5
             ) {
                 document.querySelector(".answers_text textarea").value = "";
+                this.audio_source = "";
+                this.clip_duration = "";
+                this.clip_submit_ok = false;
             }
         },
         placeAnswer() {
@@ -686,14 +795,196 @@ export default {
                 });
             }
         },
+        onResult(data) {
+            console.log("The blob data:", data);
+            const reader = new FileReader();
+            reader.readAsDataURL(data);
+            reader.onloadend = () => {
+                console.log(reader.result);
+                this.audio_blob = reader.result
+                    ? reader.result.split(",")[1]
+                    : "";
+                this.player_key += 1;
+            };
+        },
+        toggleModal(className) {
+            if (
+                document
+                    .querySelector(className)
+                    .classList.contains("is-active")
+            ) {
+                document.querySelector(className).classList.remove("is-active");
+            } else {
+                document.querySelector(className).classList.add("is-active");
+            }
+        },
+        recorder() {
+            if (!this.clip_submit_ok) {
+                const record = document.querySelector(".record");
+                const stop = document.querySelector(".stop");
+                if (
+                    navigator.mediaDevices &&
+                    navigator.mediaDevices.getUserMedia
+                ) {
+                    console.log("getUserMedia supported.");
+                    navigator.mediaDevices
+                        .getUserMedia(
+                            // constraints - only audio needed for this app
+                            {
+                                audio: true,
+                            }
+                        )
+                        // Success callback
+                        .then((stream) => {
+                            const mediaRecorder = new MediaRecorder(stream);
+                            record.onclick = function () {
+                                mediaRecorder.start();
+                                if (
+                                    !document
+                                        .querySelector(".record-icon")
+                                        .classList.contains(
+                                            "record-button-pulse"
+                                        )
+                                ) {
+                                    document
+                                        .querySelector(".record-icon")
+                                        .classList.toggle(
+                                            "record-button-pulse"
+                                        );
+                                }
+                                console.log(mediaRecorder.state);
+                                console.log("recorder started");
+                            };
+                            let chunks = [];
+
+                            mediaRecorder.ondataavailable = function (e) {
+                                chunks.push(e.data);
+                            };
+                            stop.onclick = function () {
+                                mediaRecorder.stop();
+                                document
+                                    .querySelector(".record-icon")
+                                    .classList.remove("record-button-pulse");
+                                console.log(mediaRecorder.state);
+                                console.log("recorder stopped");
+                            };
+                            mediaRecorder.onstop = () => {
+                                const blob = new Blob(chunks, {
+                                    type: "audio/ogg; codecs=opus",
+                                });
+                                getBlobDuration(blob).then((duration) => {
+                                    const minutes = (
+                                        "0" + Math.floor(duration / 60)
+                                    ).slice(-2);
+                                    const seconds = (
+                                        "0" + Math.round(duration % 60)
+                                    ).slice(-2);
+                                    this.clip_duration = `${minutes}:${seconds}`;
+                                });
+
+                                const callback = (reader) => {
+                                    this.audio_source = reader.target.result;
+                                };
+                                this.blob2Base64(blob, callback);
+                            };
+                        })
+                        // Error callback
+                        .catch(function (err) {
+                            console.log(
+                                "The following getUserMedia error occured: " +
+                                    err
+                            );
+                        });
+                } else {
+                    console.log("getUserMedia not supported on your browser!");
+                }
+            }
+        },
+        deleteClip() {
+            const confirmation = confirm(
+                "Bu kaydı silmek istediğinize emin misiniz?"
+            );
+            if (confirmation) {
+                this.audio_source = "";
+            }
+        },
+        submitClip(audio) {
+            const confirmation = confirm(
+                "Bu kaydı kaydetmek istediğinize emin misiniz? Onayladıktan sonra bir daha değişiklik yapamayacaksınız."
+            );
+            if (confirmation) {
+                this.clip_submit_loading = true;
+                StudentService.setAudio(
+                    this.$store.state.homework.homeworkId,
+                    this.$store.state.homework.questionId,
+                    {
+                        audio: audio,
+                    }
+                )
+                    .then(() => {
+                        this.clip_submit_loading = false;
+                        document.querySelector(".record-submit").style.width =
+                            "90px";
+                        this.clip_submit_ok = true;
+                    })
+                    .catch((error) => {
+                        console.log(error);
+                        this.clip_submit_loading = false;
+                        this.clip_submit_ok = false;
+                    });
+            }
+        },
+        blob2Base64(blob, callback) {
+            const reader = new window.FileReader();
+            reader.readAsDataURL(blob);
+            reader.onloadend = callback;
+        },
         ...mapActions({
             setStudentAnswer: "homework/setStudentAnswer",
         }),
     },
 };
 </script>
-
+<style>
+textarea {
+    -webkit-user-select: text; /* Chrome, Opera, Safari */
+    -moz-user-select: text; /* Firefox 2+ */
+    -ms-user-select: text; /* IE 10+ */
+    user-select: text; /* Standard syntax */
+}
+.plyr--full-ui input[type="range"] {
+    color: #747474;
+}
+.plyr__controls__item:first-child:hover {
+    background-color: #747474;
+}
+</style>
 <style scoped>
+@-webkit-keyframes pulse {
+    0% {
+        -webkit-box-shadow: 0 0 0 0 #05cbcd;
+    }
+    70% {
+        -webkit-box-shadow: 0 0 0 10px #05cbcd;
+    }
+    100% {
+        -webkit-box-shadow: 0 0 0 0 #05cbcd;
+    }
+}
+@keyframes pulse {
+    0% {
+        -moz-box-shadow: 0 0 0 0 #05cbcd;
+        box-shadow: 0 0 0 0 #05cbcd;
+    }
+    70% {
+        -moz-box-shadow: 0 0 0 10px #05cbcd;
+        box-shadow: 0 0 0 10px #05cbcd;
+    }
+    100% {
+        -moz-box-shadow: 0 0 0 0 #05cbcd;
+        box-shadow: 0 0 0 0 #05cbcd;
+    }
+}
 .outer {
     position: relative;
     border: 2px solid gray;
@@ -747,11 +1038,132 @@ ul {
     padding: 20px;
 }
 .text {
-    height: 530px;
+    height: 466px;
     width: 265px;
     border-radius: 10px;
     resize: none;
     padding: 20px;
+}
+.audio-container {
+    width: 40vw;
+    background-color: #fafafa;
+    height: 400px;
+    position: relative;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    padding: 16px;
+}
+.record-controls {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px;
+}
+.audio-recorder {
+    width: 100%;
+    border-radius: 28px;
+    margin-top: 10px;
+    font-size: 19px;
+    z-index: 39;
+}
+.record-button {
+    border: none;
+    background-color: #fafafa;
+    outline: none;
+}
+.audio-record-icon {
+    fill: #747474;
+    border-radius: 50%;
+    border: 1px solid #05cbcd;
+    background-color: #ffffff;
+    padding: 5px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.record-icon {
+    width: 65px;
+    height: 65px;
+    line-height: 65px;
+    box-shadow: 0 2px 5px 1px rgba(158, 158, 158, 0.5);
+}
+.stop-icon {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+.audio-record-icon svg {
+    vertical-align: inherit;
+}
+.clip-container {
+    display: flex;
+    flex-direction: column;
+    height: 250px;
+    justify-content: space-between;
+}
+.clip {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e7e6e6;
+    padding: 10px;
+}
+
+.clip-parts {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+    gap: 15px;
+}
+.clip-part-two {
+    justify-self: flex-end;
+}
+.clip-part-one {
+    justify-self: flex-start;
+}
+.player-container {
+    justify-self: flex-end;
+}
+.record-submit {
+    background-color: #05cbcd;
+    border-color: transparent;
+    color: #fff;
+    width: 70px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    letter-spacing: 0.7px;
+}
+.record-submit:hover,
+.record-submit:focus {
+    color: white;
+}
+.record-submit[disabled] {
+    background-color: #05cbcd;
+}
+.delete {
+    min-width: 15px;
+    min-height: 15px;
+    background-color: #ff7900;
+}
+.delete:hover,
+.delete:focus {
+    background-color: #ff9434;
+}
+.player-container {
+    background-color: white;
+    border-radius: 10px;
+    border: 1px solid #e7e6e6;
+    padding: 2px;
+}
+.w-90 {
+    width: 90px;
+}
+.record-button-pulse {
+    animation: pulse 0.75s linear infinite;
 }
 strong {
     color: #5679b3;

@@ -18,8 +18,8 @@ import "vue-good-table/dist/vue-good-table.css";
 import Datetime from "vue-datetime";
 // You need a specific loader for CSS files
 import "vue-datetime/dist/vue-datetime.css";
-
 Vue.use(Datetime);
+
 Vue.use(VueGoodTablePlugin);
 Vue.use(VuePlyr, {
     plyr: {

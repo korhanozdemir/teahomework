@@ -16,63 +16,12 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4da385bc-8c5e-4cfc-b992-eece366d0e6e" name="Default Changelist" comment="dddd">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/prettier.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/cal_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/cancel_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/class_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/comment_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/confirm_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/edit_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/homework_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/homework_icon_pencil.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/image_icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/list_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/loading.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/logout_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/liconlar/notification_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources.rar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/class-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/homework-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/matching_option_image_correct.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/assets/liconlar/matching_option_image_wrong.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/services/teacher.service.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/Index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/homework.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/js/store/modules/teacher.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sshConfigs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sshConfigs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+    <list default="true" id="4da385bc-8c5e-4cfc-b992-eece366d0e6e" name="Default Changelist" comment="-timer ile ilgili servis ve frontend güncellemeleri, artık ödevde olmasa da süre bitince ödev tamamlanmış sayılıyor.&#10;-Ses kaydı gönderimi ve öğretmen tarafında bunun dinlenebilmesi özelliiği eklendi">
+      <change afterPath="$PROJECT_DIR$/.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/versions/4.71.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/versions/4.71___.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/versions/4.73.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/HomeworkStudentResultController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Student/HomeworkStudentResultController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_07_02_124557_create_homework_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_07_02_124557_create_homework_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Pages/StudentPage.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Pages/StudentPage.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/Home.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/answer-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/answer-area.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/list.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/list.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/main-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/main-area.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/next.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/next.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/previous.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/previous.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/question-area.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/question-area.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Student/test-calendar.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Student/test-calendar.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Teacher/student-reports.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Teacher/student-reports.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/api.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/services/api.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/services/student.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/services/student.service.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/student.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/student.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/teacher.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/teacher.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -89,6 +38,9 @@
         <option value="JavaScript File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Rebase.Settings">
+    <option name="NEW_BASE" value="master" />
   </component>
   <component name="Git.Settings">
     <favorite-branches>
@@ -110,6 +62,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="368e7160-9330-4c9d-af19-9bdca4714443" />
   </component>
   <component name="JsBowerSettings">
     <node-interpreter value="project" />
@@ -151,7 +106,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.mappings" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.highlight.symlinks" value="true" />
     <property name="WebServerToolWindowPanel.toolwindow.show.date" value="false" />
@@ -162,7 +117,7 @@
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\MAMP\htdocs\teahomework2\node_modules\prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="run.prettier.on.save" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.github.izhangzhihao.rainbow.brackets.settings.RainbowConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -337,7 +292,31 @@
       <workItem from="1602660374734" duration="3309000" />
       <workItem from="1602668400799" duration="6794000" />
       <workItem from="1602747339826" duration="19123000" />
-      <workItem from="1602834079364" duration="13231000" />
+      <workItem from="1602834079364" duration="13553000" />
+      <workItem from="1602860998795" duration="413000" />
+      <workItem from="1603095614738" duration="9369000" />
+      <workItem from="1603178826159" duration="2049000" />
+      <workItem from="1603181418367" duration="12365000" />
+      <workItem from="1603265752845" duration="9098000" />
+      <workItem from="1603353363218" duration="13950000" />
+      <workItem from="1603372911592" duration="618000" />
+      <workItem from="1603445085497" duration="219000" />
+      <workItem from="1603445365996" duration="9186000" />
+      <workItem from="1603697605762" duration="21929000" />
+      <workItem from="1603785991787" duration="1126000" />
+      <workItem from="1603787214522" duration="9832000" />
+      <workItem from="1603870124916" duration="2601000" />
+      <workItem from="1603883739333" duration="1630000" />
+      <workItem from="1604044702875" duration="13508000" />
+      <workItem from="1604302360542" duration="10245000" />
+      <workItem from="1604389872264" duration="11161000" />
+      <workItem from="1604474923111" duration="9383000" />
+      <workItem from="1604560685707" duration="6569000" />
+      <workItem from="1604648505857" duration="12302000" />
+      <workItem from="1604907932496" duration="22043000" />
+      <workItem from="1604993430298" duration="12288000" />
+      <workItem from="1605082730139" duration="691000" />
+      <workItem from="1605165402801" duration="10552000" />
     </task>
     <task id="LOCAL-00001" summary="version: Save on every question change">
       <created>1595408141166</created>
@@ -353,7 +332,21 @@
       <option name="project" value="LOCAL" />
       <updated>1601025105143</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Serverside sort, filtration and pagination implementation">
+      <created>1602860662804</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1602860662804</updated>
+    </task>
+    <task id="LOCAL-00004" summary="-timer ile ilgili servis ve frontend güncellemeleri, artık ödevde olmasa da süre bitince ödev tamamlanmış sayılıyor.&#10;-Ses kaydı gönderimi ve öğretmen tarafında bunun dinlenebilmesi özelliiği eklendi">
+      <created>1605189267088</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1605189267088</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,18 +382,20 @@
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="version: Save on every question change" />
     <MESSAGE value="dddd" />
-    <option name="LAST_COMMIT_MESSAGE" value="dddd" />
+    <MESSAGE value="Serverside sort, filtration and pagination implementation" />
+    <MESSAGE value="-timer ile ilgili servis ve frontend güncellemeleri, artık ödevde olmasa da süre bitince ödev tamamlanmış sayılıyor.&#10;-Ses kaydı gönderimi ve öğretmen tarafında bunun dinlenebilmesi özelliiği eklendi" />
+    <option name="LAST_COMMIT_MESSAGE" value="-timer ile ilgili servis ve frontend güncellemeleri, artık ödevde olmasa da süre bitince ödev tamamlanmış sayılıyor.&#10;-Ses kaydı gönderimi ve öğretmen tarafında bunun dinlenebilmesi özelliiği eklendi" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="341" y="74" key="#Deployment" timestamp="1601978253930">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-3414" y="-130" key="#Deployment" timestamp="1605166664786">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
     </state>
-    <state x="-1494" y="93" key="#Deployment/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601978225722" />
+    <state x="-1494" y="93" key="#Deployment/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604049750459" />
     <state x="341" y="74" key="#Deployment/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1601978253930" />
+    <state x="-3414" y="-130" key="#Deployment/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605166664786" />
+    <state x="-3414" y="-305" key="#Deployment/0.0.1536.824/-3840.-398.1920.1040/-1920.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604479901414" />
     <state x="2346" y="93" key="#Deployment/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599470894999" />
     <state x="341" y="74" key="#Deployment/0.0.1536.824@0.0.1536.824" timestamp="1598269231977" />
-    <state x="320" y="96" key="#Deployment/0.23.1440.817@0.23.1440.817" timestamp="1594476116678" />
-    <state x="320" y="96" key="#Deployment/0.23.1440.821@0.23.1440.821" timestamp="1594475799985" />
     <state x="-1368" y="178" width="816" height="729" key="#Intentions" timestamp="1600763410808">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -409,13 +404,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="368" y="88" key="#Options/0.0.1536.824@0.0.1536.824" timestamp="1597061941702" />
-    <state x="345" y="110" key="#Options/0.23.1440.817@0.23.1440.817" timestamp="1594471753038" />
     <state x="2325" y="77" key="#SSH_Configurations" timestamp="1599470888487">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="2325" y="77" key="#SSH_Configurations/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599470888487" />
     <state x="324" y="61" key="#SSH_Configurations/0.0.1536.824@0.0.1536.824" timestamp="1597062006613" />
-    <state x="304" y="83" key="#SSH_Configurations/0.23.1440.817@0.23.1440.817" timestamp="1594476073629" />
     <state x="361" y="71" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598341062893">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -429,21 +422,10 @@
     </state>
     <state x="-814" y="319" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601886521044" />
     <state x="885" y="253" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1598951963328" />
-    <state x="1981" y="433" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594281332214" />
-    <state x="141" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1594477935628">
-      <screen x="0" y="23" width="1440" height="817" />
-    </state>
-    <state x="141" y="23" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.23.1440.817@0.23.1440.817" timestamp="1594477935628" />
     <state x="810" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598264383407">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="810" y="250" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1598264383407" />
-    <state x="850" y="280" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1440.815@0.23.1440.815" timestamp="1594455385696" />
-    <state x="2031" y="444" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594304953759" />
-    <state x="2031" y="452" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1594972495173">
-      <screen x="0" y="23" width="3440" height="1334" />
-    </state>
-    <state x="2031" y="452" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594972495173" />
     <state x="516" y="267" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1600164303409">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -456,27 +438,62 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="530" y="147" width="660" height="677" key="EditFileWatcherDialog/0.0.1536.824@0.0.1536.824" timestamp="1598867163443" />
-    <state x="-1259" y="215" key="FileChooserDialogImpl" timestamp="1600782590855">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="-3179" y="-8" key="FileChooserDialogImpl" timestamp="1605191087271">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
     </state>
     <state x="-1259" y="215" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1600782590855" />
     <state x="529" y="170" key="FileChooserDialogImpl/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1600692201639" />
+    <state x="-3179" y="-8" key="FileChooserDialogImpl/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605191087271" />
+    <state x="-3179" y="-183" key="FileChooserDialogImpl/0.0.1536.824/-3840.-398.1920.1040/-1920.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604479056857" />
     <state x="529" y="170" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1597062115671" />
     <state x="1920" y="0" key="FileDocumentManager.FileCacheConflict" timestamp="1596722170284">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="1920" y="0" key="FileDocumentManager.FileCacheConflict/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1596722170284" />
-    <state x="-1083" y="176" width="1166" height="824" key="SettingsEditor" timestamp="1601969637153">
+    <state x="-1104" y="431" key="Github.Dialog.Accounts.Choose" timestamp="1602861225010">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1083" y="176" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601969637153" />
+    <state x="-1104" y="431" key="Github.Dialog.Accounts.Choose/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602861225010" />
+    <state width="1840" height="116" key="GridCell.Tab.0.bottom" timestamp="1604324993842">
+      <screen x="-3840" y="-398" width="1920" height="1040" />
+    </state>
+    <state width="1840" height="116" key="GridCell.Tab.0.bottom/-1920.-398.1920.1030/0.0.1536.824/-3840.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604324993842" />
+    <state width="1840" height="116" key="GridCell.Tab.0.center" timestamp="1604324993841">
+      <screen x="-3840" y="-398" width="1920" height="1040" />
+    </state>
+    <state width="1840" height="116" key="GridCell.Tab.0.center/-1920.-398.1920.1030/0.0.1536.824/-3840.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604324993841" />
+    <state width="1840" height="116" key="GridCell.Tab.0.left" timestamp="1604324993840">
+      <screen x="-3840" y="-398" width="1920" height="1040" />
+    </state>
+    <state width="1840" height="116" key="GridCell.Tab.0.left/-1920.-398.1920.1030/0.0.1536.824/-3840.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604324993840" />
+    <state width="1840" height="116" key="GridCell.Tab.0.right" timestamp="1604324993841">
+      <screen x="-3840" y="-398" width="1920" height="1040" />
+    </state>
+    <state width="1840" height="116" key="GridCell.Tab.0.right/-1920.-398.1920.1030/0.0.1536.824/-3840.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604324993841" />
+    <state x="-3048" y="41" key="NewPhpFileDialog" timestamp="1604478888977">
+      <screen x="-3840" y="-398" width="1920" height="1040" />
+    </state>
+    <state x="-3048" y="41" key="NewPhpFileDialog/0.0.1536.824/-3840.-398.1920.1040/-1920.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604478888977" />
+    <state x="-3064" y="-66" key="RollbackChangesDialog" timestamp="1605191343928">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
+    </state>
+    <state x="-1144" y="157" key="RollbackChangesDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1604064272089" />
+    <state x="-3064" y="-66" key="RollbackChangesDialog/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605191343928" />
+    <state x="-1628" y="150" width="1264" height="736" key="SettingsEditor" timestamp="1603705835054">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1628" y="150" width="1264" height="736" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603705835054" />
     <state x="162" y="0" width="1166" height="824" key="SettingsEditor/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1600694944298" />
     <state x="370" y="0" width="981" height="824" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1598867164996" />
-    <state x="1802" y="329" key="SettingsEditor/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594295474028" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1595408437524">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-1122" y="324" key="StringManipulation.Base64EncodingDialog" timestamp="1603181518852">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1595408437524" />
+    <state x="-1122" y="324" key="StringManipulation.Base64EncodingDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603181518852" />
+    <state x="-3482" y="-22" key="Vcs.Push.Dialog.v2" timestamp="1605191333205">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
+    </state>
+    <state x="-1562" y="201" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602861247491" />
+    <state x="-3482" y="-22" key="Vcs.Push.Dialog.v2/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605191333205" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1599047744851">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -486,25 +503,30 @@
     </state>
     <state x="-1804" y="117" width="1688" height="806" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1601302749877" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1599137588456" />
-    <state x="-1541" y="191" width="1437" height="849" key="find.popup" timestamp="1602856103094">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="-3068" y="207" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605191019424">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
     </state>
-    <state x="-1541" y="191" width="1437" height="849" key="find.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602856103094" />
+    <state x="-3068" y="207" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605191019424" />
+    <state x="-3463" y="-35" width="1437" height="851" key="find.popup" timestamp="1605006343632">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
+    </state>
+    <state x="-3460" y="-210" width="1437" height="851" key="find.popup/0.0.1536.824/-1920.-398.1920.1040/-3840.-398.1920.1040@-3840.-398.1920.1040" timestamp="1604409213082" />
+    <state x="-1540" y="188" width="1437" height="851" key="find.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603724308064" />
     <state x="302" y="166" width="1149" height="592" key="find.popup/0.0.1536.824/-1920.0.1920.1040@0.0.1536.824" timestamp="1600440399542" />
+    <state x="-3463" y="-35" width="1437" height="851" key="find.popup/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605006343632" />
     <state x="2320" y="141" width="1437" height="801" key="find.popup/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1596722578894" />
     <state x="302" y="166" width="1149" height="592" key="find.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600160544566" />
     <state x="2291" y="235" width="1437" height="801" key="find.popup/0.0.1536.824/1920.0.1920.1040@1920.0.1920.1040" timestamp="1599551488637" />
     <state x="302" y="166" width="1149" height="592" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1599225966536" />
-    <state x="2000" y="445" width="586" height="490" key="find.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594627819666" />
     <state x="464" y="204" width="850" height="538" key="ftp.server.browser" timestamp="1597062247556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="464" y="204" width="850" height="538" key="ftp.server.browser/0.0.1536.824@0.0.1536.824" timestamp="1597062247556" />
-    <state x="627" y="168" key="ftp.server.browser/0.23.1440.817@0.23.1440.817" timestamp="1594476097369" />
-    <state x="569" y="201" key="git4idea.merge.GitPullDialog" timestamp="1595415409487">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-3095" y="193" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1605191225540">
+      <screen x="-3840" y="-223" width="1920" height="1040" />
     </state>
-    <state x="569" y="201" key="git4idea.merge.GitPullDialog/0.0.1536.824@0.0.1536.824" timestamp="1595415409487" />
+    <state x="-1175" y="416" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602861229463" />
+    <state x="-3095" y="193" key="git4idea.remote.GitConfigureRemotesDialog/0.0.1536.824/-3840.-223.1920.1040/-1920.-223.1920.1040@-3840.-223.1920.1040" timestamp="1605191225540" />
     <state x="590" y="307" key="publish.login" timestamp="1597061973385">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -515,18 +537,16 @@
     <state x="-827" y="235" key="run.anything.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1602599317596" />
     <state x="3013" y="235" key="run.anything.popup/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1596704099419" />
     <state x="874" y="186" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1598953678273" />
-    <state x="1958" y="325" key="run.anything.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594979706181" />
     <state x="653" y="328" width="486" height="395" key="scopes" timestamp="1598009544475">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="653" y="328" width="486" height="395" key="scopes/0.0.1536.824@0.0.1536.824" timestamp="1598009544475" />
-    <state x="630" y="187" width="672" height="419" key="search.everywhere.popup" timestamp="1600171117166">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="-1132" y="236" width="840" height="529" key="search.everywhere.popup" timestamp="1603791293027">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
-    <state x="3013" y="238" width="374" height="528" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040/3840.0.1680.1010@1920.0.1920.1040" timestamp="1595939337828" />
+    <state x="-1132" y="236" width="840" height="529" key="search.everywhere.popup/0.0.1536.824/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1603791293027" />
     <state x="630" y="187" width="672" height="419" key="search.everywhere.popup/0.0.1536.824/1920.0.1920.1040@0.0.1536.824" timestamp="1600171117166" />
     <state x="630" y="187" width="672" height="419" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1599209885752" />
-    <state x="1958" y="328" width="670" height="676" key="search.everywhere.popup/3440.563.1440.877/0.23.3440.1334@0.23.3440.1334" timestamp="1594388229604" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -537,19 +557,9 @@
           <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/Student/Home.vue</url>
-          <line>755</line>
-          <option name="timeStamp" value="15" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/Student/Home.vue</url>
-          <line>605</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/resources/js/components/Student/Home.vue</url>
-          <line>606</line>
-          <option name="timeStamp" value="26" />
+          <url>file://$PROJECT_DIR$/resources/js/components/Student/answer-area.vue</url>
+          <line>136</line>
+          <option name="timeStamp" value="24" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -638,7 +638,6 @@ export default {
             //
         },
         matcher(id) {
-            debugger;
             let same_line = true;
             if (this.temporary_target === 0) {
                 this.temporary_target = id;

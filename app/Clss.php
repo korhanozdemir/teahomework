@@ -20,4 +20,16 @@ class Clss extends Model
         return $this->belongsToMany('App\User', 'class_users', 'class_id', 'user_id');
     }
 
+    public function getCampus(){
+        return Clss::where("id",$this->id)->pluck("class_campus_id")[0];
+    }
+
+    public function getClassAvarage(){
+        $students = $this->students();
+        print_r($students);
+        die();
+    }
+
+
+
 }

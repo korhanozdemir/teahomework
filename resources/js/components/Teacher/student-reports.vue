@@ -9,7 +9,7 @@
         </button>
         <vue-good-table
             :key="1"
-            v-if="(getUser===1 && getTab === 0 && stage === 1)"
+            v-if="getUser === 1 && getTab === 0 && stage === 1"
             :columns="columns"
             :rows="rows"
             @on-row-click="formatTable"
@@ -34,9 +34,7 @@
             :totalRows="totalRecords"
             styleClass="vgt-table condensed striped bordered"
             class="main-table"
-            ><div slot="emptystate">
-                Bu kategoride henüz bir veri yok.
-            </div>
+            ><div slot="emptystate">Bu kategoride henüz bir veri yok.</div>
             <template slot="table-row" slot-scope="props">
                 <span v-if="props.column.field === 'comment'">
                     <button
@@ -73,13 +71,15 @@
                 </span>
                 <span
                     v-else-if="
-                        props.column.field === 'answer_image' &&
-                        props.row.answer_image === undefined
+                        (props.column.field === 'answer_image' &&
+                            props.row.answer_image === undefined) ||
+                        (props.column.field === 'answer_audio' &&
+                            props.row.answer_audio === undefined)
                     "
                 >
                     <img
                         src="images/liconlar/loading.svg"
-                        style="width: 30px;"
+                        style="width: 30px"
                         alt=""
                     />
                 </span>
@@ -92,6 +92,17 @@
                     <button
                         class="image-button button is-info"
                         @click="showScreenshot(props.row)"
+                    ></button>
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'answer_audio' &&
+                        props.row.answer_audio
+                    "
+                >
+                    <button
+                        class="sound-button button is-warning"
+                        @click="showAudio(props.row)"
                     ></button>
                 </span>
 
@@ -164,7 +175,7 @@
                             chosen_homework.deadline
                         )
                     "
-                    style="color: red;"
+                    style="color: red"
                 >
                     {{ props.formattedRow[props.column.field] }}
                 </span>
@@ -187,9 +198,7 @@
             v-else
             styleClass="vgt-table condensed striped bordered"
             class="main-table"
-            ><div slot="emptystate">
-                Bu kategoride henüz bir veri yok.
-            </div>
+            ><div slot="emptystate">Bu kategoride henüz bir veri yok.</div>
             <template slot="table-row" slot-scope="props">
                 <span v-if="props.column.field === 'comment'">
                     <button
@@ -226,13 +235,15 @@
                 </span>
                 <span
                     v-else-if="
-                        props.column.field === 'answer_image' &&
-                        props.row.answer_image === undefined
+                        (props.column.field === 'answer_image' &&
+                            props.row.answer_image === undefined) ||
+                        (props.column.field === 'answer_audio' &&
+                            props.row.answer_audio === undefined)
                     "
                 >
                     <img
                         src="images/liconlar/loading.svg"
-                        style="width: 30px;"
+                        style="width: 30px"
                         alt=""
                     />
                 </span>
@@ -245,6 +256,17 @@
                     <button
                         class="image-button button is-info"
                         @click="showScreenshot(props.row)"
+                    ></button>
+                </span>
+                <span
+                    v-else-if="
+                        props.column.field === 'answer_audio' &&
+                        props.row.answer_audio
+                    "
+                >
+                    <button
+                        class="sound-button button is-warning"
+                        @click="showAudio(props.row)"
                     ></button>
                 </span>
 
@@ -317,7 +339,7 @@
                             chosen_homework.deadline
                         )
                     "
-                    style="color: red;"
+                    style="color: red"
                 >
                     {{ props.formattedRow[props.column.field] }}
                 </span>
@@ -370,13 +392,13 @@
                         <p class="answer-header">Öğrencinin cevabı:</p>
                         <p id="answer"></p>
                     </div>
-                    <div style="font-size: 24px; padding: 10px;">
+                    <div style="font-size: 24px; padding: 10px">
                         <label
-                            style="color: black; font-weight: 500; float: left;"
+                            style="color: black; font-weight: 500; float: left"
                             >Not Ver:</label
                         >
                         <input type="text" maxlength="3" id="grade" />
-                        <p style="display: inline;">/100</p>
+                        <p style="display: inline">/100</p>
                     </div>
                 </section>
                 <footer class="modal-card-foot">
@@ -452,13 +474,26 @@
                         aria-label="close"
                     ></button>
                 </header>
-                <div style="position: sticky;">
+                <div style="position: sticky">
                     <img
-                        style="height: 65vh;"
+                        style="height: 65vh"
                         :src="screenshot_image_source"
                         alt=""
                     />
                 </div>
+            </div>
+        </div>
+        <div class="modal modal-audio">
+            <div
+                class="modal-background"
+                @click="toggleModal('.modal-audio')"
+            ></div>
+            <div style="width: 40vw">
+                <vue-plyr :key="audio_source">
+                    <audio>
+                        <source :src="audio_source" />
+                    </audio>
+                </vue-plyr>
             </div>
         </div>
     </div>
@@ -706,6 +741,10 @@ export default {
                     field: "answer_image",
                 },
                 {
+                    label: "Ses Kaydı",
+                    field: "answer_audio",
+                },
+                {
                     label: "Not ver",
                     field: "grade",
                 },
@@ -845,6 +884,8 @@ export default {
             minDatetime: "",
             isSort: 1,
             screenshot_image_source: "",
+            audio_source: "",
+            audio_player_key: 0,
             loading: false,
             totalRecords: 100,
         };
@@ -1207,13 +1248,14 @@ export default {
                                             : 1
                                         : 0,
                                 answer_image: element.screenshot,
+                                answer_audio: element.audio,
                             });
                             questionIndex = element.question_index;
                         });
                     }
                 }
             );
-            this.getImages(homework_id, class_id);
+            this.getImagesandSounds(homework_id, class_id);
         },
         async getTab2Classes() {
             await TeacherService.getTab2Classes().then((res) => {
@@ -1431,12 +1473,16 @@ export default {
             this.screenshot_image_source = info.answer_image;
             this.toggleModal(".screenshot-modal");
         },
+        showAudio(info) {
+            this.audio_source = info.answer_audio;
+            this.toggleModal(".modal-audio");
+        },
         async postGrade() {
             await TeacherService.rateQuestion(
                 this.chosenAnswerId,
                 document.getElementById("grade").value
             ).then((res) => {
-                console.log(res);
+                document.getElementById("grade").value = "";
             });
             this.refresh();
             this.toggleModal(".grade-modal");
@@ -1477,6 +1523,7 @@ export default {
             if (this.compareDates(this.deadline, now)) {
                 await TeacherService.changeDeadline(
                     this.chosenHomeworkEditId,
+                    this.chosenHomeworkEditId,
                     moment(this.deadline).format("YYYY-MM-DD HH:mm:ss")
                 );
                 this.enableClick = 1;
@@ -1502,7 +1549,7 @@ export default {
                 return false;
             }
         },
-        getImages(homework_id, student_id) {
+        getImagesandSounds(homework_id, student_id) {
             TeacherService.getStudentAnswers(homework_id, student_id, 1).then(
                 (res) => {
                     this.rows = [
@@ -1512,6 +1559,11 @@ export default {
                                     answer.question_index === row.question_index
                                 );
                             })[0].screenshot;
+                            row.answer_audio = res.data.filter((answer) => {
+                                return (
+                                    answer.question_index === row.question_index
+                                );
+                            })[0].audio;
                             return row;
                         }),
                     ];
@@ -1569,7 +1621,7 @@ export default {
                 if (this.getUser === 1) {
                     if (this.getTab === 0) {
                         if (this.stage === 1) {
-                            await this.getAllHomeworks(params).then();
+                            await this.getAllHomeworks(params);
                             this.loading = false;
                         }
                     }
@@ -1603,7 +1655,7 @@ export default {
     margin: 40px 40px;
 }
 #grade {
-    width: 44px;
+    width: 48px;
     text-align: center;
 }
 #answer {
@@ -1681,9 +1733,15 @@ export default {
 }
 .image-button {
     background: url("/images/liconlar/image_icon.svg") no-repeat;
-    background-size: 30px;
+    background-size: 31px;
     width: 30px;
-    height: 30px;
+    height: 33px;
+}
+.sound-button {
+    background: url("/images/liconlar/sound_image.png") no-repeat;
+    background-size: 31px;
+    width: 32px;
+    height: 33px;
 }
 .padding-top-120 {
     padding-top: 159px;

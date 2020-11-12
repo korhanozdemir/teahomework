@@ -84,7 +84,7 @@
         </section>
         <div v-show="$store.state.homework.homework_started" class="timing">
             <div></div>
-            <div style="position: relative; height: 38px;">
+            <div style="position: relative; height: 38px">
                 <button class="button is-primary" @click="openCalendar">
                     Takvim
                 </button>
@@ -97,9 +97,7 @@
                     v-on:toggle-modal="
                         $emit('toggle-modal', '.time-is-up-modal')
                     "
-                    v-on:submitHomework="
-                        $emit('submitHomework', '.time-is-up-modal')
-                    "
+                    v-on:submitHomework="timesUp()"
                     :isLoaded="isLoaded"
                     :jsonQuestions.sync="jsonQuestions"
                     :preQuestion.sync="preQuestion"
@@ -204,6 +202,12 @@ export default {
                 this.jsonQuestions.data.questions.length - 1
             ) {
                 this.$store.commit("homework/nextQuestion");
+                this.$store.commit(
+                    "homework/setQuestionId",
+                    this.jsonQuestions.data.questions[
+                        this.$store.state.homework.questionIndex
+                    ].id
+                );
                 this.$store.commit("homework/setTime");
 
                 setTimeout(this.dragger, 100);
@@ -233,6 +237,12 @@ export default {
         prevQuestion() {
             if (this.$store.state.homework.questionIndex > 0) {
                 this.$store.commit("homework/prevQuestion");
+                this.$store.commit(
+                    "homework/setQuestionId",
+                    this.jsonQuestions.data.questions[
+                        this.$store.state.homework.questionIndex
+                    ].id
+                );
                 this.$store.commit("homework/setTime");
 
                 setTimeout(this.dragger, 100);
@@ -469,13 +479,11 @@ export default {
             }
         },
         matcher() {
-            debugger;
             if (document.getElementsByClassName("match")[0]) {
                 var clicked = [];
                 var hoverElement;
                 var lineElem;
                 function drawLineXY(fromXY, toXY) {
-                    debugger;
                     if (
                         !document.querySelector(".question-area-canvas canvas")
                     ) {
@@ -650,16 +658,22 @@ export default {
                     "translate3d(0px, 0px, 0px)";
             }
         },
-        submit() {
+        async timesUp() {
+            this.changeQuestion("prev");
+            await this.screenshot();
+            await this.$emit("submitHomework", ".time-is-up-modal");
+            this.$emit("go-back");
+        },
+        async submit() {
             if (this.$store.state.homework.isDone) {
                 this.$emit("go-back");
             } else {
                 this.changeQuestion("prev");
-                this.screenshot();
+                await this.screenshot();
                 this.$emit("toggle-modal", ".save-and-exit-modal");
             }
         },
-        openCalendar() {
+        async openCalendar() {
             if (this.$store.state.homework.isDone) {
                 this.$emit("go-back");
             } else {
@@ -697,7 +711,6 @@ export default {
                     canvas.toBlob((blob) => {
                         this.toggleScreenshot();
                         const reader = new FileReader();
-                        console.log(blob);
                         reader.readAsDataURL(blob);
                         reader.onloadend = () => {
                             this.setScreenshot(reader.result);

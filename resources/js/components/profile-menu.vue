@@ -118,7 +118,7 @@ export default {
                     if (res) {
                         this.setNotificationStatus(
                             res.data.notifications.find((element) => {
-                                return element.pivot.is_read === 0;
+                                return element.is_read === 0;
                             })
                                 ? 1
                                 : 0

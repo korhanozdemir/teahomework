@@ -21,7 +21,7 @@ class AuthController extends Controller
         if($validator ->fails()){
             return response()->json([
                 'message' => $validator->messages()
-            ]);
+            ], 400);
         }
         $user = User::where('role', 2)
             ->where('email', $request->input('username'))
@@ -32,6 +32,7 @@ class AuthController extends Controller
                 $user->update(['api_token'=> $token]);
 
                 return response()->json([
+                    'id' => $user->id,
                     'name' => $user->name,
                     'code' => $user->code,
                     'api_token' => $token,

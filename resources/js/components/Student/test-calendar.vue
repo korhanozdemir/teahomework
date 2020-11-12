@@ -66,7 +66,6 @@ export default {
         callHomeworkModule(clickInfo) {
             const event = clickInfo.event._def;
             this.homeworkId = event.publicId;
-            debugger;
             this.$store.commit(
                 "homework/setDeadline",
                 clickInfo.event._instance.range.end

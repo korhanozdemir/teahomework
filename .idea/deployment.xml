@@ -8,8 +8,6 @@
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/app" />
-            <excludedPath path="/bootstrap" />
             <excludedPath path="/config" />
             <excludedPath path="/database" />
             <excludedPath path="/node_modules" />
@@ -17,7 +15,6 @@
             <excludedPath path="/storage" />
             <excludedPath path="/vendor" />
             <excludedPath path="/.env" />
-            <excludedPath path="/package.json" />
             <excludedPath path="/composer.json" />
             <excludedPath path="/Archive.zip" />
           </excludedPaths>
@@ -29,7 +26,6 @@
             <mapping deploy="/" local="$PROJECT_DIR$" web="/" />
           </mappings>
           <excludedPaths>
-            <excludedPath path="/app" />
             <excludedPath path="/bootstrap" />
             <excludedPath path="/config" />
             <excludedPath path="/database" />

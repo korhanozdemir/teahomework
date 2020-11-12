@@ -6,15 +6,12 @@
                 :key="notification.id"
                 v-for="notification in notifications"
                 @click="
-                    callAction(
-                        notification.pivot.text_id,
-                        notification.pivot.homework_id
-                    )
+                    callAction(notification.ntype, notification.homework_id)
                 "
             >
                 <div
                     :style="
-                        notification.pivot.text_id === 1
+                        notification.ntype === 1
                             ? {
                                   backgroundImage:
                                       'url(' +
@@ -32,29 +29,27 @@
                 ></div>
                 <div class="text-block">
                     <p class="date">
-                        {{ formatDate(notification.pivot.created_at) }}
+                        {{ formatDate(notification.created_at) }}
                     </p>
-                    <p
-                        class="content-text"
-                        v-if="notification.pivot.text_id === 1"
-                    >
+                    <p class="content-text" v-if="notification.ntype === 1">
                         <span>
-                            {{ notification.homework.course.course_name }}
+                            {{ notification.course_name }}
                         </span>
-                        dersi için yeni bir ödeviniz var.
-                    </p>
-                    <p
-                        class="content-text"
-                        v-if="notification.pivot.text_id === 2"
-                    >
+                        dersi için
                         <span>
-                            {{ notification.homework.homework_name }}
+                            {{ notification.homework_name }}
+                        </span>
+                        adında yeni bir ödeviniz var.
+                    </p>
+                    <p class="content-text" v-if="notification.ntype === 2">
+                        <span>
+                            {{ notification.homework_name }}
                         </span>
                         adlı ödeve öğretmeniniz tarafından yeni bir yorum
                         eklendi.
                     </p>
                 </div>
-                <div class="read" v-if="!notification.pivot.is_read"></div>
+                <div class="read" v-if="!notification.is_read"></div>
             </button>
         </div>
         <div v-else>
@@ -86,7 +81,7 @@ export default {
                 this.notifications = res.data.notifications;
                 this.setNotificationStatus(
                     this.notifications.find((element) => {
-                        return element.pivot.is_read === 0;
+                        return element.is_read === 0;
                     })
                         ? 1
                         : 0

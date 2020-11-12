@@ -68,4 +68,17 @@ export default {
             data
         );
     },
+    startAndGetHomeworkTimer(homework_id) {
+        return ApiService.get(resource + `set-homework-time/${homework_id}`);
+    },
+    setAudio(homework_id, question_id, data) {
+        return ApiService.post(
+            resource +
+                "homework-student-result-audio/" +
+                homework_id +
+                "/" +
+                question_id,
+            data
+        );
+    },
 };

@@ -16,6 +16,7 @@ class User extends Authenticatable
     use SoftDeletes;
 
 
+
     /**
      * The attributes that are mass assignable.
      *
@@ -43,6 +44,11 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public static function find($user_id)
+    {
+
+    }
 
     public function hasRole($role){
         $hasRole = Roles::Select("users.id")
@@ -76,8 +82,6 @@ class User extends Authenticatable
 
         $student = $authuser->getStudentClass();
         $student = $student ? $student->toArray() : [];
-
-
         return (array_merge($authuser->toArray(), $student));
 
 
@@ -112,6 +116,30 @@ class User extends Authenticatable
 
     public function roleName(){
         return $this->belongsTo('App\Roles','id');
+    }
+
+    public function notifications(){
+        return $this->belongsToMany('App\Notification', 'notification_users', 'user_id', 'text_id')
+            ->orderBy('notification_users.created_at','DESC')
+            ->withPivot('is_read','homework_id')
+            ->withTimestamps();
+    }
+
+    public function getPassword(){
+        return $this->password;
+    }
+
+    public function getClass(){
+        return ClassUser::where("user_id",$this->id)->pluck("class_id")[0];
+    }
+
+    public function getAutoLoginKey(){
+        return $this->clsses->first()->class_name.preg_replace('/[^0-9]/', '', $this->code );
+    }
+
+    public function isLeadTeacher(){
+        $isLead = LeadteacherLesson::where("teacher_id", $this->id)->count() ? 1 : 0;
+        return $isLead;
     }
 
 

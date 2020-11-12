@@ -44,6 +44,23 @@ class CreateHomeworkController extends Controller
             ]);
         }
 
+        /*
+
+        $questionCorrectAnswers = "";
+
+        foreach ($request->questions as $qreq) {
+
+            $questionCorrectAnswers .= "question type: " . $qreq['question_type'] .
+                "\nquestion index: " . $qreq['question_index'] .
+                "\nquestion correct Answer: " . $qreq['correct_answer'] .
+                "\n";
+
+        }
+
+        return $questionCorrectAnswers;
+        //die();
+        */
+
         $homework = new Homework();
         $homework -> homework_publisher_id = Auth::user()->id;
         $homework -> homework_name = $request->homework_name;

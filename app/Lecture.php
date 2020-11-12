@@ -13,4 +13,8 @@ class Lecture extends Model
     public function course(){
         return $this->belongsTo('App\Course', 'lecture_course_id' , 'id');
     }
+
+    public function parentlecture(){
+        return $this->belongsTo('App\Lecture', 'parent_lecture_id' , 'id')->select(array('id', 'lecture_name','parent_lecture_id'));
+    }
 }

@@ -11,8 +11,8 @@
 
     <!-- Scripts -->
     @auth
-
-    <script src="{{ asset('js/app.js') }}" defer></script>
+test
+    <script src="{{ asset('js/app.js') }}?mimar=test" defer></script>
 
     @endauth
 
